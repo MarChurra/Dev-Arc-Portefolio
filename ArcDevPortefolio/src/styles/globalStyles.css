@@ -1,0 +1,134 @@
+/*Global Styling*/
+
+@font-face {
+    font-family: 'Arcane';
+    src: url('../../assets/fonts/arcane.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arcane', sans-serif;
+    font-optical-sizing: auto;
+    line-height: 1.5;
+}
+
+html,
+body {
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Background Colors */
+#homeSection {
+    background: linear-gradient(-180deg, #737570 0%, #303436 100%);
+}
+
+#skillsSection {
+    background: linear-gradient(-180deg, #303436 0%, #737570 100%);
+}
+
+#projectsSection {
+    background: linear-gradient(-180deg, #737570 0%, #303436 100%);
+}
+
+#contactSection {
+    background: linear-gradient(#303436, #303436);
+}
+
+h1 {
+    color: gold;
+    padding-top: 1em;
+}
+
+/*Style Variables*/
+
+/*Home*/
+
+#downArrowHook,
+#downArrow {
+    width: 30px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    animation: bounce 1.75s infinite ease-in-out;
+}
+
+/*Skills*/
+
+/*Projects*/
+
+/*Contacts*/
+
+@media only screen and (max-width: 485px) {
+
+    /*Home*/
+
+    /*Skills*/
+
+    /*Projects*/
+
+    /*Contacts*/
+
+}
+
+@media only screen and (max-width: 770px) {
+
+    /*Home*/
+
+    /*Skills*/
+
+    /*Projects*/
+
+    /*Contacts*/
+
+}
+
+@media only screen and (max-width: 1025px) {
+
+    /*Home*/
+
+    /*Skills*/
+
+    /*Projects*/
+
+    /*Contacts*/
+
+}
+
+@media only screen and (max-width: 1205px) {
+
+    /*Home*/
+
+    /*Skills*/
+
+    /*Projects*/
+
+    /*Contacts*/
+
+}
+
+ /*Animations*/
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+div.fp-watermark {
+    display: none;
+}
