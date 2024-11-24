@@ -1,64 +1,215 @@
 /*Global Styling*/
 
 @font-face {
-    font-family: 'Arcane';
-    src: url('../../assets/fonts/arcane.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Arcane";
+  src: url("../../assets/fonts/arcane.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arcane', sans-serif;
-    font-optical-sizing: auto;
-    line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Arcane", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 1.5;
 }
 
 html,
 body {
-    overflow-y: hidden;
-    scrollbar-width: none;
+  overflow-y: hidden;
+  scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Background Colors */
-#homeSection {
-    background: linear-gradient(-180deg, #737570 0%, #303436 100%);
+#introSection {
+  background: linear-gradient(-180deg, #737570 0%, #303436 100%);
 }
 
 #skillsSection {
-    background: linear-gradient(-180deg, #303436 0%, #737570 100%);
+  background: linear-gradient(-180deg, #303436 0%, #737570 100%);
 }
 
 #projectsSection {
-    background: linear-gradient(-180deg, #737570 0%, #303436 100%);
+  background: linear-gradient(-180deg, #737570 0%, #303436 100%);
 }
 
 #contactSection {
-    background: linear-gradient(#303436, #303436);
+  background: linear-gradient(#303436, #303436);
+}
+
+/*Text Styling */
+:root {
+  --highlighted-text: linear-gradient(to right, #e2c78f, #fff2b2);
+  --silver-text: linear-gradient(to right, #bbc6cc, #c2ccd1);
+  --highlights: linear-gradient(to right, #e2c78f, #fff2b2);
 }
 
 h1 {
-    color: gold;
-    padding-top: 1em;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: var(--highlighted-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/*Style Variables*/
+h2 {
+  font-size: 1.25rem;
+}
 
-/*Home*/
+p {
+  background: var(--silver-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.highlighted-text {
+  font-family: "Poppins", sans-serif;
+  background: var(--highlighted-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.highlighted-text::after {
+  content: "";
+  position: absolute;
+  bottom: 1.5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--highlighted-text);
+}
+
+/*Navbar*/
+.navbar-container {
+  position: fixed;
+  z-index: 3;
+  top: 9%;
+  background-color: rgba(126, 128, 123, 0.7);
+  padding: 0.25em 0.8em;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: width 0.25s ease;
+  width: 50px;
+}
+
+.navbar-container.expanded {
+  width: 100px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.navbar-opt {
+  margin: 0.2em 0;
+}
+
+.navbar-opt button {
+  padding: 0 0.5em;
+  background-color: transparent;
+  color: #fff2b2;
+  border: 2px solid #e2c78f;
+  border-radius: 2.5px;
+  outline: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.navbar-opt button.active {
+  background-color: #2e3538;
+}
+
+/*Intro*/
+
+.app-logo {
+  width: 35px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
+#personal-container {
+  position: fixed;
+  right: 15px;
+  border: 1.25px solid #fff2b2;
+  border-radius: 15px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none;
+  background-color: rgba(48, 52, 54, 0.5);
+}
+
+.social-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 1.25em 0em 0.5em;
+}
+
+.social-icon,
+.social-link {
+  width: 20px;
+}
+
+#author-photo {
+  height: 140px;
+  opacity: 65%;
+}
+
+.intro-info {
+  position: fixed;
+  top: 43%;
+  left: 5%;
+}
+
+.intro-paragraph {
+  margin-top: 0.5em;
+  width: 95%;
+  text-align: left;
+}
+
+.contact-btn {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border-color: #fff2b2;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(28, 28, 28, 1);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(28, 28, 28, 1);
+  box-shadow: 0px 0px 3px 0px rgba(28, 28, 28, 1);
+  background-color: #e2c78f;
+}
+
+.btn-text {
+  background: linear-gradient(-180deg, #737570 0%, #303436 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+}
 
 #downArrowHook,
 #downArrow {
-    width: 30px;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    animation: bounce 1.75s infinite ease-in-out;
+  width: 25px;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  animation: bounce 2s infinite ease-in-out;
 }
 
 /*Skills*/
@@ -68,67 +219,81 @@ h1 {
 /*Contacts*/
 
 @media only screen and (max-width: 485px) {
+  /*Navbar*/
 
-    /*Home*/
+  /*Home*/
 
-    /*Skills*/
+  /*Skills*/
 
-    /*Projects*/
+  /*Projects*/
 
-    /*Contacts*/
-
+  /*Contacts*/
 }
 
 @media only screen and (max-width: 770px) {
+  /*Navbar*/
+  /* .navbar-container {
+    width: 200px;
+  }
 
-    /*Home*/
+  .navbar-opt:hover {
+    background-color: #2e3538;
+  }
 
-    /*Skills*/
+  .navbar-opt:hover .button-label {
+    display: inline-block;
+  }
 
-    /*Projects*/
+  .navbar-container.expanded .navbar-opt:hover {
+    background-color: #2e3538;
+  } */
 
-    /*Contacts*/
+  /*Home*/
 
+  /*Skills*/
+
+  /*Projects*/
+
+  /*Contacts*/
 }
 
 @media only screen and (max-width: 1025px) {
+  /*Navbar*/
 
-    /*Home*/
+  /*Home*/
 
-    /*Skills*/
+  /*Skills*/
 
-    /*Projects*/
+  /*Projects*/
 
-    /*Contacts*/
-
+  /*Contacts*/
 }
 
 @media only screen and (max-width: 1205px) {
+  /*Navbar*/
 
-    /*Home*/
+  /*Home*/
 
-    /*Skills*/
+  /*Skills*/
 
-    /*Projects*/
+  /*Projects*/
 
-    /*Contacts*/
-
+  /*Contacts*/
 }
 
- /*Animations*/
+/*Animations*/
 
 @keyframes bounce {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
 
-    50% {
-        transform: translateY(-5px);
-    }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
-
 div.fp-watermark {
-    display: none;
+  display: none;
 }
