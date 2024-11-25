@@ -32,13 +32,15 @@ const FullPageWrapper: React.FC = () => {
     { name: "contacts", label: "Contacts", text: "C" },
   ];
 
+  const pageAnchors = navigationAnchors.map((anchor) => anchor.name)
+
   return (
     <>
       <Navbar anchors={navigationAnchors} currentSection={currentSection} />
 
       <ReactFullpage
         scrollingSpeed={850}
-        anchors={navigationAnchors.map((anchor) => anchor.name)}
+        anchors={pageAnchors}
         scrollBar={false} //Scrollbar is hidden with CSS. Without scrollbar property, the height of the sections inst being correctly calculated
         verticalCentered={false}
         fitToSection={true}
@@ -52,7 +54,7 @@ const FullPageWrapper: React.FC = () => {
             <>
               <ReactFullpage.Wrapper>
                 <div id="introSection" className="section">
-                  <Intro />
+                  <Intro anchors={navigationAnchors} />
                 </div>
                 <div id="skillsSection" className="section">
                   <Skills />

@@ -1,6 +1,10 @@
 import SocialNav from "../components/social-nav";
 
-const Intro: React.FC = () => {
+interface IntroProps {
+  anchors: { name: string }[];
+}
+
+const Intro: React.FC<IntroProps> = ({ anchors }) => {
   return (
     <>
       <img
@@ -25,14 +29,19 @@ const Intro: React.FC = () => {
           Welcome to my portefolio.
         </p>
         <p className="intro-paragraph">
-          Currently based in Portugal, I am a
+          Currently based in Portugal, I am a  {""}
           <span className="highlighted-text"> Front End Developer </span> {""}
           who strives to build elegant and acessible applications.
         </p>
-        <button className="contact-btn" type="button">
+        <button
+          className="contact-btn"
+          type="button"
+          onClick={() =>
+            window.location.hash = "contacts"
+          }>
           <span className="btn-text">Contact Me</span>
         </button>
-      </div>
+      </div >
       <a id="downArrowHook" href="#skills">
         <img
           id="downArrow"
