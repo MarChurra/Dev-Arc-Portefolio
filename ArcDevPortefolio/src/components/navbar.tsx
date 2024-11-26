@@ -37,9 +37,13 @@ const Navbar: React.FC<NavbarProps> = ({ anchors, currentSection }) => {
   return (
     <nav
       onClick={handleNavbarToggle}
-      className={`navbar-container ${isExpanded ? "expanded" : ""}`}
+      className={`navbar-container 
+        ${isExpanded ? "expanded" : ""}
+        ${window.location.hash !== "#intro" && "top-navbar"} 
+        `}
     >
-      <ul className="navbar">
+      <ul className={`navbar ${!isExpanded ? "disabled" : ""}`}>
+
         {anchors.map((anchor, index) => (
           <li key={index} className="navbar-opt">
             <button

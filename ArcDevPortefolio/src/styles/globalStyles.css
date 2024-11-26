@@ -62,6 +62,10 @@ h2 {
   font-size: 1.25rem;
 }
 
+h3 {
+  font-size: 1.1rem;
+}
+
 p {
   background: var(--silver-text);
   -webkit-background-clip: text;
@@ -92,6 +96,16 @@ p {
   background: var(--highlighted-text);
 }
 
+.page-logo {
+  font-size: 1.75rem;
+  color: gold;
+  background: var(--highlighted-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ margin-top: 20%;
+ margin-left: 0.3em;
+}
+
 /*Navbar*/
 .navbar-container {
   position: fixed;
@@ -101,7 +115,7 @@ p {
   padding: 0.25em 0.8em;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  transition: width 0.2s ease;
+  transition: width 0.1s ease;
   width: 50px;
   -webkit-box-shadow: 0px 0px 1.5px 0px rgba(28, 28, 28, 1);
   -moz-box-shadow: 0px 0px 1.5px 0px rgba(28, 28, 28, 1);
@@ -140,6 +154,43 @@ p {
 .expanded-btn {
   width: 70px;
   text-align: center;
+}
+
+.top-navbar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-container.top-navbar {
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 50%;
+}
+
+.top-navbar .navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0.5em;
+}
+
+.top-navbar .navbar .navbar-opt {
+  margin: 0 0.2em;
+}
+
+.navbar-container.top-navbar.expanded {
+  width: 100%;
+}
+
+.top-navbar .navbar .navbar-opt .expanded-btn {
+  margin: 0em;
+}
+
+.navbar.disabled button {
+  pointer-events: none;
 }
 
 /*Intro*/
@@ -201,6 +252,7 @@ p {
   -moz-box-shadow: 0px 0px 3px 0px rgba(28, 28, 28, 1);
   box-shadow: 0px 0px 3px 0px rgba(28, 28, 28, 1);
   background-color: #e2c78f;
+  cursor: pointer;
 }
 
 .btn-text {
@@ -221,6 +273,11 @@ p {
 }
 
 /*Skills*/
+.skills-container {
+  width: 95%;
+  margin: auto;
+}   
+
 
 /*Projects*/
 
