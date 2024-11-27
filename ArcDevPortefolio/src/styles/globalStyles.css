@@ -102,8 +102,8 @@ p {
   background: var(--highlighted-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
- margin-top: 20%;
- margin-left: 0.3em;
+  margin-top: 22%;
+  margin-left: 0.3em;
 }
 
 /*Navbar*/
@@ -276,8 +276,38 @@ p {
 .skills-container {
   width: 95%;
   margin: auto;
-}   
+  height: 100%;
+  overflow-y: auto;
+}
 
+.skill-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+  justify-items: center;
+  margin: 1.5em 0;
+  overflow-y: auto;
+}
+
+
+.skill-title {
+  background: var(--highlighted-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.skill-experience {
+  background: var(--silver-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.25em;
+}
 
 /*Projects*/
 
@@ -349,6 +379,7 @@ p {
 /*Animations*/
 
 @keyframes bounce {
+
   0%,
   100% {
     transform: translateY(0);
