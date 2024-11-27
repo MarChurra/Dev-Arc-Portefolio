@@ -1,11 +1,12 @@
 const Contacts: React.FC = () => {
 
-    return (
-      <h1>
-        Hello Contacts!
-      </h1>
-    )
-  }
-  
-  export default Contacts
-  
+  return (
+    <section className="section-container">
+      <h2 className="page-title">
+        Contacts
+      </h2>
+    </section>
+  )
+}
+
+export default Contacts

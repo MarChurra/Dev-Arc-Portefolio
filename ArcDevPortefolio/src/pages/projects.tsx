@@ -1,11 +1,12 @@
 const Projects: React.FC = () => {
 
-    return (
-      <h1>
-        Hello Projects!
-      </h1>
-    )
-  }
-  
-  export default Projects
-  
+  return (
+    <section className="section-container">
+      <h2 className="page-title">
+        Projects
+      </h2>
+    </section>
+  )
+}
+
+export default Projects

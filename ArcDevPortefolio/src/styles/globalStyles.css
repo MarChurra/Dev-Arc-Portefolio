@@ -22,6 +22,11 @@ body {
   scrollbar-width: none;
 }
 
+.section-container {
+  width: 95%;
+  margin: auto;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -96,7 +101,7 @@ p {
   background: var(--highlighted-text);
 }
 
-.page-logo {
+.page-title {
   font-size: 1.75rem;
   color: gold;
   background: var(--highlighted-text);
@@ -273,22 +278,28 @@ p {
 }
 
 /*Skills*/
-.skills-container {
-  width: 95%;
-  margin: auto;
-  height: 100%;
-  overflow-y: auto;
-}
 
 .skill-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2em;
+  gap: 1.5em;
   justify-items: center;
-  margin: 1.5em 0;
-  overflow-y: auto;
+  margin: 0 0 3em;
 }
 
+.skill-container {
+  border-top: 0.5px solid #bbc6cc;
+  padding-top: 1em;
+}
+
+.skill-container:first-child {
+  border: none;
+}
+
+.skill-container:last-child {
+  border-bottom: 0.5px solid #bbc6cc;
+  padding-bottom: 1em;
+}
 
 .skill-title {
   background: var(--highlighted-text);
@@ -304,7 +315,7 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
   margin-top: 0.25em;
 }

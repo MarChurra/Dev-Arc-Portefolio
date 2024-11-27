@@ -5,17 +5,17 @@ type TechExperienceType = {
   experience: number,
 }
 
-const formatSkillsContent = (years: number): sting => {
+const formatSkillsContent = (years: number): string => {
   if (years < 1) return "<1 Year of Experience"
   else if (years === 1) return "1 Year of Experience"
   return `${years} Years of Experience`
 }
 
-const Skills: React.FC = () => {
+const Skills: React.FC<TechExperienceType> = () => {
   return (
     <>
-      <section className="skills-container">
-        <h2 className="page-logo">Skills</h2>
+      <section className="section-container">
+        <h2 className="page-title">Skills</h2>
         <div className="skill-grid">
           {skills.map((skill, index) => (
             <div key={index} className="skill-container">

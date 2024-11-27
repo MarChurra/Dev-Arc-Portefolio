@@ -12,7 +12,8 @@
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.45",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
