@@ -39,7 +39,6 @@ const Navbar: React.FC<NavbarProps> = ({ anchors, currentSection }) => {
       onClick={handleNavbarToggle}
       className={`navbar-container 
         ${isExpanded ? "expanded" : ""}
-        ${window.location.hash !== "#intro" && window.location.hash !== "" && "top-navbar"} 
         `}
     >
       <ul className={`navbar ${!isExpanded ? "disabled" : ""}`}>

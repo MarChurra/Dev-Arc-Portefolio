@@ -107,8 +107,9 @@ p {
   background: var(--highlighted-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-top: 22%;
-  margin-left: 0.3em;
+  margin: 15% 0 0.25em;
+  margin-left: -0.2em;
+  text-align: center;
 }
 
 /*Navbar*/
@@ -159,39 +160,6 @@ p {
 .expanded-btn {
   width: 70px;
   text-align: center;
-}
-
-.top-navbar {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.navbar-container.top-navbar {
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  width: 50%;
-}
-
-.top-navbar .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0.5em;
-}
-
-.top-navbar .navbar .navbar-opt {
-  margin: 0 0.2em;
-}
-
-.navbar-container.top-navbar.expanded {
-  width: 100%;
-}
-
-.top-navbar .navbar .navbar-opt .expanded-btn {
-  margin: 0em;
 }
 
 .navbar.disabled button {
