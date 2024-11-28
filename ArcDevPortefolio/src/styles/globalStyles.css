@@ -299,8 +299,8 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 0%);
-  width: 275px;
-  height: 180px;
+  width: 300px;
+  height: 200px;
   background-image: url('/assets/icons/frame.png');
   background-size: cover;
   background-position: center;
@@ -309,18 +309,39 @@ p {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  z-index: 10;
 }
 
 .frame-container {
-  width: 237px;
-  height: 139.5px;
+  width: 263px;
+  height: 155.5px;
   margin-top: -0.25em;
-  margin-left: -0.15em;
+  margin-left: -0.2em;
+  z-index: 5;
+  position: relative;
 }
 
 .project-image {
   width: 100%;
   height: 100%;
+  z-index: 3;
+}
+
+.project-details-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 263px;
+  height: 155.5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background-color: rgba(48, 52, 54, 0.75);
+}
+
+.project-details-container.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 /*Contacts*/

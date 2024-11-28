@@ -5,12 +5,14 @@ type TechExperienceType = {
   experience: number,
 }
 
+//Format the text in the paragraph
 const formatSkillsContent = (years: number): string => {
   if (years < 1) return "<1 Year of Experience"
   else if (years === 1) return "1 Year of Experience"
   return `${years} Years of Experience`
 }
 
+//Maps over the skills object
 const Skills: React.FC<TechExperienceType> = () => {
   return (
     <>

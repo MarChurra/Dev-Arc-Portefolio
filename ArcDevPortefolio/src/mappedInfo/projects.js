@@ -3,75 +3,57 @@ import { v4 as uuidv4 } from 'uuid'
 const pastProjects = [
     {
         id: uuidv4(),
-        name: 'Tagus Portus Modeling',
-        thumbnail: '/projects/tagus.png',
-        src: 'https://tagusportusmodeling.netlify.app/'
+        title: 'Tagus Portus Modeling',
+        thumbnailSmall: '/assets/projects/tagus.png',
+        thumbnailLarge: '',
+        techStack: '',
+        src: 'https://tagusportusmodeling.netlify.app/',
+        github: ''
     },
     {
         id: uuidv4(),
-        name: 'Quizzical',
-        thumbnail: '/projects/quizzical.png',
+        title: 'Quizzical',
+        thumbnailSmall: '/assets/projects/tagus.png',
+        thumbnailLarge: '',
+        techStack: '',
         src: 'https://macquizzical.netlify.app/',
+        github: ''
     },
     {
         id: uuidv4(),
-        name: 'Paimons Daily Confidence Booster',
-        thumbnail: '/projects/paimons.png',
+        title: 'Paimons Daily Confidence Booster',
+        thumbnailSmall: '/assets/projects/tagus.png',
+        thumbnailLarge: '',
+        techStack: '',
         src: 'https://paimondsdailyconfidencebooster.netlify.app/',
+        github: ''
     },
     {
         id: uuidv4(),
-        name: 'Travel Log',
-        thumbnail: '/projects/travel.png',
-        src: 'https://personaltravellog.netlify.app/',
-    },
-    {
-        id: uuidv4(),
-        name: 'CantRememberTheMovie',
-        thumbnail: './projects/movie.png',
+        title: 'CantRememberTheMovie',
+        thumbnailSmall: '/assets/projects/tagus.png',
+        thumbnailLarge: '',
+        techStack: '',
         src: 'https://cantrememberthemovie.netlify.app/',
+        github: ''
     },
     {
         id: uuidv4(),
-        name: 'Color Generator',
-        thumbnail: '/projects/colors.png',
-        src: 'https://colorpalgenerator.netlify.app/',
-    },
-    {
-        id: uuidv4(),
-        name: 'Restaurant TakeOut App',
-        thumbnail: '/projects/orders.png',
-        src: 'https://restaurantordertemplate.netlify.app/',
-    },
-    {
-        id: uuidv4(),
-        name: 'Twimba',
-        thumbnail: '/projects/twimba.png',
+        title: 'Twimba',
+        thumbnailSmall: '/assets/projects/tagus.png',
+        thumbnailLarge: '',
+        techStack: '',
         src: 'https://twimbaxclone.netlify.app/',
+        github: ''
     },
     {
         id: uuidv4(),
-        name: 'Oldgram',
-        thumbnail: '/projects/oldgram.png',
-        src: 'https://oldgramtemplate.netlify.app/',
-    },
-    {
-        id: uuidv4(),
-        name: 'Shopping List App',
-        thumbnail: '/projects/companion.png',
+        title: 'Shopping List App',
+        thumbnailSmall: '/assets/projects/tagus.png',
+        thumbnailLarge: '',
+        techStack: '',
         src: 'https://shopping-companion.netlify.app/',
-    },
-    {
-        id: uuidv4(),
-        name: 'Unit Converter',
-        thumbnail: '/projects/converter.png',
-        src: 'https://mc-unit-converter.netlify.app/',
-    },
-    {
-        id: uuidv4(),
-        name: 'Basketball Counter',
-        thumbnail: '/projects/basketcounter.png',
-        src: 'https://basket-game-counter.netlify.app/',
+        github: ''
     },
 ]
 
