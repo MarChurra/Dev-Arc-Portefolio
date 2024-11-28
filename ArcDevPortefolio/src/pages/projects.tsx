@@ -5,6 +5,12 @@ const Projects: React.FC = () => {
       <h2 className="page-title">
         Projects
       </h2>
+      <div className="frame">
+        <div className="frame-container">
+          <img className="project-image"
+            src="/assets/projects/twimba.png" alt="" />
+        </div>
+      </div>
     </section>
   )
 }
