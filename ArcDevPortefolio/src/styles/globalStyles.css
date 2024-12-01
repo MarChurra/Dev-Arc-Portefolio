@@ -291,7 +291,7 @@ p {
 /*Projects*/
 
 #projectsSection .page-title {
-  margin-top: 46%;
+  margin-top: 50%;
 }
 
 .mySwiper {
@@ -314,7 +314,7 @@ p {
   transform: translate(-50%, 0%);
   width: 300px;
   height: 200px;
-  background-image: url('/assets/icons/frame.png');
+  background-image: url("/assets/icons/frame.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -359,12 +359,13 @@ p {
 }
 
 .project-title {
-  margin: 2px auto 0 auto;
+  margin: 4px auto 0 auto;
+  font-size: 1rem;
   text-align: center;
   background: var(--silver-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  width: 90%;
+  width: 60%;
   height: 30%;
   text-wrap: wrap;
 }
@@ -374,7 +375,7 @@ p {
   justify-content: space-between;
   align-items: center;
   margin: 0 1.25em;
-  height: 65%;
+  height: 55%;
 }
 
 .project-tech {
@@ -391,7 +392,7 @@ p {
 }
 
 .project-link {
-  margin: 0.25em 0;
+  margin: 0.4em 0;
   background: var(--silver-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -413,6 +414,67 @@ p {
 .tech-icon {
   width: 20px;
   object-fit: contain;
+}
+
+.projects-navigation {
+  margin: 0.5em auto;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+.custom-arrow,
+.custom-arrow-highlighted,
+.selection-button,
+.custom-arrow-img,
+.selection-img {
+  width: 25px;
+  outline: black;
+}
+
+.selection-img-highlight,
+.selection-button.active {
+  width: 30px;
+}
+
+.selection-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0.5em;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.selector-separator {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-arrow,
+.selection-button,
+.selection-container,
+.selection-img-highlight,
+.selection-img {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.custom-arrow,
+.selection-button,
+.selection-container,
+.selector-separator,
+.selection-img-highlight,
+.selection-img {
+  display: flex;
+  align-items: center;
 }
 
 /*Contacts*/
@@ -483,7 +545,6 @@ p {
 /*Animations*/
 
 @keyframes bounce {
-
   0%,
   100% {
     transform: translateY(0);
