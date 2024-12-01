@@ -349,7 +349,7 @@ p {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  background-color: rgba(48, 52, 54, 0.75);
+  background-color: rgba(48, 52, 54, 0.9);
   z-index: 5;
 }
 
@@ -362,7 +362,7 @@ p {
   margin: 4px auto 0 auto;
   font-size: 1rem;
   text-align: center;
-  background: var(--silver-text);
+  background: rgb(250, 245, 245);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: 60%;
@@ -393,7 +393,7 @@ p {
 
 .project-link {
   margin: 0.4em 0;
-  background: var(--silver-text);
+  background: rgb(250, 245, 245);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
