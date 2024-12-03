@@ -444,11 +444,15 @@ p {
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
-  margin: 0 0.5em;
+  margin: 0 0.75em;
   overflow-x: auto;
-  flex-wrap: nowrap;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.selection-container::-webkit-scrollbar {
+  display: none;
 }
 
 .selector-separator {
@@ -544,6 +548,7 @@ p {
 /*Animations*/
 
 @keyframes bounce {
+
   0%,
   100% {
     transform: translateY(0);

@@ -5,7 +5,10 @@ interface NavbarProps {
   currentSection: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ anchors, currentSection }) => {
+const Navbar: React.FC<NavbarProps> = ({
+  anchors,
+  currentSection,
+}) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   //Handles the expansion and collapsing of the navbar
@@ -51,7 +54,6 @@ const Navbar: React.FC<NavbarProps> = ({ anchors, currentSection }) => {
                 }
                 ${isExpanded ? "expanded-btn" : ""}`}
               onClick={() => {
-
                 handleOptionClick(anchor.name);
               }}
             >

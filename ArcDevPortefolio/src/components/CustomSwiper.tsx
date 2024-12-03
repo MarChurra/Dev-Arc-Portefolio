@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+
 import { oldProjects } from "../mappedInfo/pastProjects";
 import { TechnologiesMap } from "../mappedInfo/technologiesMap";
 
 //Swiper Components and stylings
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperCore } from 'swiper';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
@@ -35,32 +36,16 @@ const swiperModules = [Navigation, EffectFade, EffectCoverflow];
 interface CustomSwiperProps {
   toggleDetails: () => void;
   showDetails: boolean;
-  swiperRef: React.RefObject<any>;
-  handleSlideChange: () => void;
+  handleSlideChange: (swiper: SwiperCore) => void;
+  setSwiperInstance: (swiper: SwiperCore) => void;
 }
 
 const CustomSwiper: React.FC<CustomSwiperProps> = ({
   toggleDetails,
   showDetails,
-  swiperRef,
   handleSlideChange,
+  setSwiperInstance
 }) => {
-
-  //Allows keyboard navigation between the selectors
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft") {
-        swiperRef.current?.swiper?.slidePrev();
-      } else if (event.key === "ArrowRight") {
-        swiperRef.current?.swiper?.slideNext();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [swiperRef]);
 
   return (
     <>
@@ -69,17 +54,13 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
           <Swiper
             loop={true}
             effect="fade"
-            speed={300}
+            fadeEffect={{ crossFade: true }}
+            speed={250}
             modules={swiperModules}
             onSlideChange={handleSlideChange}
             breakpoints={swiperBreakpoints}
             className="mySwiper"
-            ref={swiperRef}
-            onSwiper={(swiperInstance) => {
-              if (swiperRef.current !== swiperInstance) {
-                swiperRef.current = swiperInstance;
-              }
-            }}
+            onSwiper={setSwiperInstance}
           >
             {oldProjects.map((project, index) => (
               <SwiperSlide key={index}>

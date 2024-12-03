@@ -36,7 +36,10 @@ const FullPageWrapper: React.FC = () => {
 
   return (
     <>
-      <Navbar anchors={navigationAnchors} currentSection={currentSection} />
+      <Navbar
+       anchors={navigationAnchors} 
+       currentSection={currentSection} 
+       />
 
       <ReactFullpage
         scrollingSpeed={850}

@@ -1,4 +1,9 @@
-[
+type knowledgeInterface = {
+  tech: string;
+  experience: number;
+};
+
+export const knowledge: knowledgeInterface[] = [
   {
     "tech": "HTML / CSS",
     "experience": 2

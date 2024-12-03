@@ -1,22 +1,77 @@
-import { SwiperCore } from 'swiper';
+import React, { useEffect, useCallback, useRef } from "react";
 import { oldProjects } from "../mappedInfo/pastProjects";
 
 interface CustomNavigationProps {
-    swiperRef: React.RefObject<SwiperCore | null>;
+    swiperInstance: any | null;
     activeIndex: number;
     goToSlide: (index: number) => void;
 }
 
 const CustomNavigation: React.FC<CustomNavigationProps> = ({
-    swiperRef,
+    swiperInstance,
     activeIndex,
     goToSlide,
 }) => {
+
+
+    // Handle key down events for arrow navigation
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (!swiperInstance) return;
+
+            if (event.key === "ArrowLeft") {
+                // Navigate to the previous slide
+                swiperInstance.slidePrev();
+            } else if (event.key === "ArrowRight") {
+                // Navigate to the next slide
+                swiperInstance.slideNext();
+            }
+        };
+
+        // Add event listener for arrow keys
+        window.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            // Clean up the event listener when the component unmounts
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [swiperInstance]);
+
+    //Add movement to the container of the buttons, that centers the active button, if any of them can´t be rendered 
+    const selectionContainerRef = useRef<HTMLDivElement>(null);
+
+    const scrollToActiveButton = useCallback(() => {
+        if (selectionContainerRef.current) {
+            const container = selectionContainerRef.current;
+            const activeButton = container.querySelector('.selection-button.active');
+            if (activeButton) {
+                const containerWidth = container.offsetWidth;
+                const buttonLeft = (activeButton as HTMLElement).offsetLeft;
+                const buttonWidth = (activeButton as HTMLElement).offsetWidth;
+                const scrollLeft = buttonLeft - containerWidth / 2 + buttonWidth / 2;
+
+                container.scrollTo({
+                    left: scrollLeft,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, []);
+
+    useEffect(() => {
+        scrollToActiveButton();
+    }, [activeIndex, scrollToActiveButton]);
+
     return (
         <div className="projects-navigation">
             <button
                 className="custom-arrow"
-                onClick={() => {swiperRef.current?.slidePrev()}}
+                onClick={() => {
+                    if (swiperInstance) {
+                        swiperInstance.slidePrev();
+                    }
+                }}
+                aria-label='Navigate to the previous project'
             >
                 <img
                     className="custom-arrow-img"
@@ -24,17 +79,15 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
                     alt="Navigate to the previous project"
                 />
             </button>
-            <div className="selection-container">
+            <div className="selection-container" ref={selectionContainerRef}>
                 {oldProjects.map((project, index) => (
-                    <>
+                    <React.Fragment key={index}>
                         <button
-                            key={index}
-                            className={`selection-button
-                       ${activeIndex === index ? "active" : ""}`}
+                            className={`selection-button ${activeIndex === index ? "active" : ""}`}
                             onClick={() => {
-                                console.log(index)
-                                goToSlide(index)
-                            }} //Navigate to the selected project
+                                goToSlide(index);
+                            }}
+                            aria-label={`Navigate to the project number ${index}`}
                         >
                             <img
                                 src={`${activeIndex === index
@@ -55,13 +108,18 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
                                 className="selector-separator"
                             />
                         )}
-                    </>
+                    </React.Fragment>
                 ))}
             </div>
 
             <button
                 className="custom-arrow"
-                onClick={() => swiperRef.current?.slideNext()}
+                onClick={() => {
+                    if (swiperInstance) {
+                        swiperInstance.slideNext();
+                    }
+                }}
+                aria-label='Navigate to the next project'
             >
                 <img
                     className="custom-arrow-img"

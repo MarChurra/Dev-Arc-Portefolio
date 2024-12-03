@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useCallback } from "react";
 import CustomSwiper from "../components/CustomSwiper";
 import CustomNavigation from "../components/customNavigation";
 import { Swiper as SwiperCore } from 'swiper'
@@ -6,23 +6,21 @@ import { Swiper as SwiperCore } from 'swiper'
 
 const Projects: React.FC = () => {
   //States to keep track of the current project being seen 
-  const swiperRef = useRef<SwiperCore | null>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
 
   // Handle slide change to update the active index
-  const handleSlideChange = (swiper:any) => {
-    if (swiperRef.current !== swiper) {
-      swiperRef.current = swiper;
-      setActiveIndex(swiper.realIndex);
-    }
+  const handleSlideChange = (swiper: SwiperCore) => {
+    const realIndex = swiper.realIndex;
+    setActiveIndex(realIndex);
   };
 
-  //Navigate to selected slide
+
+  // Navigate to selected slide
   const goToSlide = (index: number) => {
-    if (swiperRef.current) {
-      swiperRef.current.slideTo(index);
-    }
+    swiperInstance && swiperInstance.slideTo(index)
   };
+
   //Manage if the details of the project are visible or not
   const [showDetails, setShowDetails] = useState<boolean>(false);
 
@@ -34,20 +32,18 @@ const Projects: React.FC = () => {
     <section
       className="section-container"
       onClick={() => {
-        if (showDetails) {
-          toggleDetails();
-        }
+        showDetails && toggleDetails();
       }}
     >
       <h2 className="page-title">Projects</h2>
       <CustomSwiper
         toggleDetails={toggleDetails}
         showDetails={showDetails}
-        swiperRef={swiperRef}
         handleSlideChange={handleSlideChange}
+        setSwiperInstance={setSwiperInstance}
       />
       <CustomNavigation
-        swiperRef={swiperRef}
+        swiperInstance={swiperInstance}
         activeIndex={activeIndex}
         goToSlide={goToSlide}
       />
