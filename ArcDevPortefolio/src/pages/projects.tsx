@@ -1,11 +1,10 @@
 import { useState, useCallback } from "react";
 import CustomSwiper from "../components/CustomSwiper";
 import CustomNavigation from "../components/customNavigation";
-import { Swiper as SwiperCore } from 'swiper'
-
+import { Swiper as SwiperCore } from "swiper";
 
 const Projects: React.FC = () => {
-  //States to keep track of the current project being seen 
+  //States to keep track of the current project being seen
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
 
@@ -15,10 +14,9 @@ const Projects: React.FC = () => {
     setActiveIndex(realIndex);
   };
 
-
   // Navigate to selected slide
   const goToSlide = (index: number) => {
-    swiperInstance && swiperInstance.slideTo(index)
+    swiperInstance && swiperInstance.slideTo(index);
   };
 
   //Manage if the details of the project are visible or not

@@ -5,10 +5,7 @@ interface NavbarProps {
   currentSection: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({
-  anchors,
-  currentSection,
-}) => {
+const Navbar: React.FC<NavbarProps> = ({ anchors, currentSection }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   //Handles the expansion and collapsing of the navbar
@@ -45,13 +42,13 @@ const Navbar: React.FC<NavbarProps> = ({
         `}
     >
       <ul className={`navbar ${!isExpanded ? "disabled" : ""}`}>
-
         {anchors.map((anchor, index) => (
           <li key={index} className="navbar-opt">
             <button
               aria-label={`Navigate to ${anchor.label}`}
-              className={`navbar-opt ${anchor.name === currentSection ? "active" : ""
-                }
+              className={`navbar-opt ${
+                anchor.name === currentSection ? "active" : ""
+              }
                 ${isExpanded ? "expanded-btn" : ""}`}
               onClick={() => {
                 handleOptionClick(anchor.name);
