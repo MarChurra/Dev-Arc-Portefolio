@@ -32,14 +32,11 @@ const FullPageWrapper: React.FC = () => {
     { name: "contacts", label: "Contacts", text: "C" },
   ];
 
-  const pageAnchors = navigationAnchors.map((anchor) => anchor.name)
+  const pageAnchors = navigationAnchors.map((anchor) => anchor.name);
 
   return (
     <>
-      <Navbar
-       anchors={navigationAnchors} 
-       currentSection={currentSection} 
-       />
+      <Navbar anchors={navigationAnchors} currentSection={currentSection} />
 
       <ReactFullpage
         scrollingSpeed={850}

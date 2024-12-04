@@ -1,10 +1,9 @@
-
 import { oldProjects } from "../mappedInfo/pastProjects";
 import { TechnologiesMap } from "../mappedInfo/technologiesMap";
 
 //Swiper Components and stylings
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperCore } from 'swiper';
+import { Swiper as SwiperCore } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
@@ -32,7 +31,6 @@ const swiperBreakpoints = {
 
 const swiperModules = [Navigation, EffectFade, EffectCoverflow];
 
-
 interface CustomSwiperProps {
   toggleDetails: () => void;
   showDetails: boolean;
@@ -44,9 +42,8 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
   toggleDetails,
   showDetails,
   handleSlideChange,
-  setSwiperInstance
+  setSwiperInstance,
 }) => {
-
   return (
     <>
       <div className="frame">
@@ -73,8 +70,9 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
                   onClick={toggleDetails}
                 />
                 <div
-                  className={`project-details-container ${showDetails ? "visible" : ""
-                    }`}
+                  className={`project-details-container ${
+                    showDetails ? "visible" : ""
+                  }`}
                 >
                   <h3 className="project-title">{project.title}</h3>
                   <div className="details">
