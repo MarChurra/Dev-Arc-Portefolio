@@ -54,7 +54,7 @@ const FullPageWrapper: React.FC = () => {
             <>
               <ReactFullpage.Wrapper>
                 <div id="introSection" className="section">
-                  <Intro anchors={navigationAnchors} />
+                  <Intro />
                 </div>
                 <div id="skillsSection" className="section">
                   <Skills />

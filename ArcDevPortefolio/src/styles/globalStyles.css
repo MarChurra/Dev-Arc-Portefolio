@@ -18,7 +18,7 @@
 
 html,
 body {
-  overflow-y: hidden;
+  overflow-y: auto;
   scrollbar-width: none;
 }
 
@@ -48,7 +48,14 @@ body {
   background: linear-gradient(#303436, #303436);
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100%;
+  overflow: auto;
+  justify-content: space-between;
+  position: relative;
+}
+
+#contactSection .fp-overflow {
+  min-height: 100%;
 }
 
 /*Text Styling */
@@ -62,6 +69,8 @@ h1 {
   font-size: 1.5rem;
   font-weight: 600;
   background: var(--highlighted-text);
+  background-clip: border-box;
+  background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -76,6 +85,7 @@ h3 {
 
 p {
   background: var(--silver-text);
+  background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Poppins", sans-serif;
@@ -88,6 +98,7 @@ p {
 .highlighted-text {
   font-family: "Poppins", sans-serif;
   background: var(--highlighted-text);
+  background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -108,6 +119,7 @@ p {
   font-size: 1.75rem;
   color: gold;
   background: var(--highlighted-text);
+  background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 12.5% 0 0.25em;
@@ -237,6 +249,7 @@ p {
 
 .btn-text {
   background: linear-gradient(-180deg, #737570 0%, #303436 100%);
+  background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1rem;
@@ -278,6 +291,7 @@ p {
 
 .skill-title {
   background: var(--highlighted-text);
+  background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 500;
@@ -287,6 +301,7 @@ p {
 
 .skill-experience {
   background: var(--silver-text);
+  background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Poppins", sans-serif;
@@ -370,6 +385,7 @@ p {
   font-size: 1rem;
   text-align: center;
   background: rgb(250, 245, 245);
+  background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: 60%;
@@ -401,6 +417,7 @@ p {
 .project-link {
   margin: 0.4em 0;
   background: rgb(250, 245, 245);
+  background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -491,13 +508,112 @@ p {
 /*Contacts*/
 
 .contact-form {
-  flex-grow: 1;
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 55%;
+}
+
+.contact-info {
+  font-family: "Poppins", sans-serif;
+  margin: 1em auto;
+  font-size: 1rem;
+  width: 80%;
+  text-align: left;
+  color: #bbc6cc;
+}
+
+.desktop-only {
+  display: none;
+}
+
+.form-input,
+.form-input textarea {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.form-input,
+.form-button,
+textarea {
+  font-family: "Arcane", sans-serif;
+  background-color: transparent;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  color: #bbc6cc;
+}
+
+.form-button {
+  background: var(--silver-text);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1.5px solid#bbc6cc;
+  margin: 0.5em 0 1em auto;
+}
+
+.form-input {
+  padding-bottom: 0.5em;
+  margin-bottom: 1.5em;
+  border-bottom: 1.5px solid#bbc6cc;
+}
+
+.form-input:focus,
+.form-button:focus,
+textarea:focus {
+  background: var(--silver-text);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1.5px solid#FFF2B2;
+}
+
+.form-button:focus {
+  background: var(--highlighted-text);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-input::placeholder {
+  opacity: 1;
+}
+
+::-webkit-input-placeholder {
+  color: #bbc6cc;
+}
+
+::-moz-placeholder {
+  color: #bbc6cc;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #bbc6cc;
+}
+
+textarea {
+  min-height: 100px;
+  max-height: 125px;
+  font-weight: 400;
+}
+
+.footer-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
 }
 
 .project-footer {
   width: 85%;
-  height: auto;
-  margin: auto auto 0 auto;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -528,40 +644,24 @@ p {
   padding: 0;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.email-notification {
+  background-color: rgba(36, 37, 34, 0.9);
+  z-index: 25;
+  border-radius: 5px;
+  border: 1px solid #e2c78f ;
 }
 
-.contact-info {
+.email-notification p {
   font-family: "Poppins", sans-serif;
-  margin: 1em auto;
-  font-size: 1rem;
-  width: 60%;
-  text-align: left;
-  color: #BBC6CC;
-}
-
-.form-input,
-.form-button {
-  font-family: "Arcane", sans-serif;
-  background-color: transparent;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-}
-
-.form-input {
-  color: #BBC6CC;
-  opacity: 1;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 1em 1.5em;
+  color: silver;
 }
 
 /*Media Queries*/
 
-@media only screen and (max-width: 485px) {
+@media only screen and (min-width: 485px) {
   /*Navbar*/
 
   /*Home*/
@@ -573,7 +673,7 @@ p {
   /*Contacts*/
 }
 
-@media only screen and (max-width: 770px) {
+@media only screen and (min-width: 770px) {
   /*Navbar*/
   /* .navbar-container {
     width: 200px;
@@ -600,7 +700,11 @@ p {
   /*Contacts*/
 }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (min-width: 1025px) {
+  .desktop-only {
+    display: block;
+  }
+
   /*Navbar*/
 
   /*Home*/
@@ -612,7 +716,7 @@ p {
   /*Contacts*/
 }
 
-@media only screen and (max-width: 1205px) {
+@media only screen and (min-width: 1205px) {
   /*Navbar*/
 
   /*Home*/

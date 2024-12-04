@@ -8,21 +8,23 @@ const Contacts: React.FC = () => {
         <h2 className="page-title">Contacts</h2>
       </section>
 
-      <p className="contact-info">
+      <p className="contact-info desktop-only">
         I would be honored if you are interested in my work. <br />
         Feel free to contact me via the form below.
       </p>
 
       <ContactForm />
 
-      <footer className="project-footer">
-        <SocialNav />
-        <img
-          className="footer-logo"
-          src="/assets/icons/logo.png"
-          alt="Author´s Logo"
-        />
-      </footer>
+      <div className="footer-wrapper">
+        <footer className="project-footer">
+          <SocialNav />
+          <img
+            className="footer-logo"
+            src="/assets/icons/logo.png"
+            alt="Author´s Logo"
+          />
+        </footer>
+      </div>
     </>
   );
 };

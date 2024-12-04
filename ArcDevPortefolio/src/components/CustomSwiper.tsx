@@ -99,6 +99,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
                         className="project-link"
                         aria-label="Visit Website"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         View website
                       </a>
@@ -107,6 +108,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
                         className="project-link"
                         aria-label="See Code"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         View code
                       </a>

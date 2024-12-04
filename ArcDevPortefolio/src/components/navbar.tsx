@@ -46,9 +46,8 @@ const Navbar: React.FC<NavbarProps> = ({ anchors, currentSection }) => {
           <li key={index} className="navbar-opt">
             <button
               aria-label={`Navigate to ${anchor.label}`}
-              className={`navbar-opt ${
-                anchor.name === currentSection ? "active" : ""
-              }
+              className={`navbar-opt ${anchor.name === currentSection ? "active" : ""
+                }
                 ${isExpanded ? "expanded-btn" : ""}`}
               onClick={() => {
                 handleOptionClick(anchor.name);

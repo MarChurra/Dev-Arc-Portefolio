@@ -34,14 +34,26 @@ const ContactForm: React.FC = () => {
     setSubmittingMessage(true);
     setSubmitMessage("");
 
+    // Define the serverless function URL (local or production)
+    
+    const apiUrl =
+      import.meta.env.VITE_APP_ENV === "development"
+        ? "http://localhost:8888/.netlify/functions/send-email"
+        : "/.netlify/functions/send-email";
+
     try {
-      const res = await axios.post("/api/send-email", formData);
+      const res = await axios.post(apiUrl, formData);
       setSubmitMessage(res.data.message);
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", message: "" }); //Clear the current data
     } catch (error) {
       setSubmitMessage("An error occured. Please try again");
     } finally {
       setSubmittingMessage(false);
+
+      // Set timeout after updating submitMessage
+      setTimeout(() => {
+        setSubmitMessage("");
+      }, 2000); //Clear message after 2 seconds
     }
   };
 
@@ -89,10 +101,11 @@ const ContactForm: React.FC = () => {
       >
         {submittingMessage ? "Submitting..." : "Submit Email"}
       </button>
-
-      <div className="email-notification" aria-live="polite" role="status">
-        {submitMessage && <p>{submitMessage}</p>}
-      </div>
+      {submitMessage && (
+        <div className="email-notification" aria-live="polite" role="status">
+          <p>{submitMessage}</p>
+        </div>
+      )}
     </form>
   );
 };

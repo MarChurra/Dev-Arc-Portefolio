@@ -1,10 +1,6 @@
 import SocialNav from "../components/social-nav";
 
-interface IntroProps {
-  anchors: { name: string }[];
-}
-
-const Intro: React.FC<IntroProps> = ({ anchors }) => {
+const Intro: React.FC = () => {
   return (
     <>
       <img
