@@ -1,5 +1,4 @@
 import { useState, FormEvent } from "react";
-import axios from "axios";
 
 interface ContactFormData {
   name: string;
@@ -13,7 +12,9 @@ const ContactForm: React.FC = () => {
     email: "",
     message: "",
   });
+  const { name, email, message } = formData;
 
+  //Loading State and notification message
   const [submittingMessage, setSubmittingMessage] = useState<boolean>(false);
   const [submitMessage, setSubmitMessage] = useState<string>("");
 
@@ -28,32 +29,47 @@ const ContactForm: React.FC = () => {
     }));
   };
 
-  //Handle the logic for submitting the email
+  // Handle form submission
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmittingMessage(true);
     setSubmitMessage("");
 
-    // Define the serverless function URL (local or production)
-    
     const apiUrl =
       import.meta.env.VITE_APP_ENV === "development"
         ? "http://localhost:8888/.netlify/functions/send-email"
         : "/.netlify/functions/send-email";
 
     try {
-      const res = await axios.post(apiUrl, formData);
-      setSubmitMessage(res.data.message);
-      setFormData({ name: "", email: "", message: "" }); //Clear the current data
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitMessage(result.message);
+        setFormData({ name: "", email: "", message: "" }); // Clear form fields
+      } else {
+        setSubmitMessage(result.message || "Error sending email");
+      }
     } catch (error) {
-      setSubmitMessage("An error occured. Please try again");
+      console.error("Error submitting form:", error);
+      setSubmitMessage("An error occurred. Please try again.");
     } finally {
       setSubmittingMessage(false);
 
-      // Set timeout after updating submitMessage
       setTimeout(() => {
         setSubmitMessage("");
-      }, 2000); //Clear message after 2 seconds
+      }, 2000);
     }
   };
 
@@ -95,7 +111,7 @@ const ContactForm: React.FC = () => {
       ></textarea>
 
       <button
-        className="form-button"
+        className={`form-button ${submittingMessage ? "active" : ""}`}
         type="submit"
         disabled={submittingMessage}
       >

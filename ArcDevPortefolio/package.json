@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.45",
+    "@sendgrid/mail": "^8.1.4",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "express": "^4.21.1",
