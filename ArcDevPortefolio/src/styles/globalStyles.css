@@ -1,5 +1,4 @@
 /*Global Styling*/
-
 @font-face {
   font-family: "Arcane";
   src: url("../../assets/fonts/arcane.otf") format("opentype");
@@ -22,16 +21,18 @@ body {
   scrollbar-width: none;
 }
 
+/* Scrollbar  */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Flexible Container & default styles */
+
 .section-container {
   width: 95%;
   margin: auto;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
-/* Background Colors */
 #introSection {
   background: linear-gradient(-180deg, #737570 0%, #303436 100%);
 }
@@ -58,7 +59,7 @@ body {
   min-height: 100%;
 }
 
-/*loading styles*/
+/*loading screen*/
 .loading-screen {
   position: fixed;
   top: 0;
@@ -97,20 +98,20 @@ body {
 
 .loading-logo {
   position: absolute;
-  top: 50%;
+  top: 42.5%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 125px;
 }
 
-/* Content (Main App) */
+/* Main Content of the App */
 .app-content {
-  opacity: 0; 
-  transition: opacity 0.5s ease; 
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .app-content.visible {
-  opacity: 1; 
+  opacity: 1;
 }
 
 /*Text Styling */
@@ -367,8 +368,11 @@ p {
 
 /*Projects*/
 
-#projectsSection .page-title {
-  margin-top: 50%;
+#projectsSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .mySwiper {
@@ -562,15 +566,6 @@ p {
 
 /*Contacts*/
 
-.contact-form {
-  margin: 1em auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 55%;
-}
-
 .contact-info {
   font-family: "Poppins", sans-serif;
   margin: 1em auto;
@@ -580,8 +575,18 @@ p {
   color: #bbc6cc;
 }
 
+/*Hide the contact info on mobile view*/
 .desktop-only {
   display: none;
+}
+
+.contact-form {
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 55%;
 }
 
 .form-input,
@@ -689,7 +694,9 @@ textarea {
 }
 
 .project-footer {
-  width: 90%;
+  width: 85%;
+  padding-top: 0.25em;
+  padding-bottom: 0.5em;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -726,7 +733,14 @@ textarea {
   z-index: 25;
   border-radius: 5px;
   border: 1px solid #e2c78f;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
 
+.email-notification.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 .email-notification p {
@@ -739,10 +753,76 @@ textarea {
 
 /*Media Queries*/
 
+@media only screen and (min-width: 350px) {
+  /*Text Styling */
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p,
+  input {
+    font-size: 1.15rem;
+  }
+
+  .page-title {
+    font-size: 2.25rem;
+  }
+
+  /*Loading screen*/
+
+  .loading-spinner,
+  .spinner {
+    width: 275px;
+    height: 275px;
+  }
+
+  .loading-logo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 175px;
+  }
+
+  /*Navbar*/
+  .navbar-container {
+    top: 11%;
+    width: 60px;
+    padding: 0.35em 0.8em;
+  }
+
+  .navbar-opt {
+    font-size: 1.1rem;
+  }
+
+  .navbar-container.expanded {
+    width: 110px;
+  }
+
+  /*Intro*/
+  .app-logo,
+  .footer-logo {
+    width: 50px;
+  }
+
+  /*Skills*/
+
+  /*Projects*/
+
+  /*Contacts*/
+}
+
 @media only screen and (min-width: 485px) {
   /*Navbar*/
 
-  /*Home*/
+  /*Intro*/
 
   /*Skills*/
 
@@ -769,7 +849,7 @@ textarea {
     background-color: #2e3538;
   } */
 
-  /*Home*/
+  /*Intro*/
 
   /*Skills*/
 
@@ -785,7 +865,7 @@ textarea {
 
   /*Navbar*/
 
-  /*Home*/
+  /*Intro*/
 
   /*Skills*/
 
@@ -797,7 +877,7 @@ textarea {
 @media only screen and (min-width: 1205px) {
   /*Navbar*/
 
-  /*Home*/
+  /*Intro*/
 
   /*Skills*/
 

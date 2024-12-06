@@ -19,6 +19,7 @@ const ContactForm: React.FC = () => {
   //Loading State and notification message
   const [submittingMessage, setSubmittingMessage] = useState<boolean>(false);
   const [submitMessage, setSubmitMessage] = useState<string>("");
+  const [showNotification, setShowNotification] = useState<boolean>(false);
 
   //Snapshot of the values of the form
   const handleChange = (
@@ -35,6 +36,7 @@ const ContactForm: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmittingMessage(true);
+    setShowNotification(true);
     setSubmitMessage("");
 
     try {
@@ -58,8 +60,9 @@ const ContactForm: React.FC = () => {
       setSubmittingMessage(false);
 
       setTimeout(() => {
+        setShowNotification(false);
         setSubmitMessage("");
-      }, 2000);
+      }, 3000);
     }
   };
 
@@ -108,7 +111,11 @@ const ContactForm: React.FC = () => {
         {submittingMessage ? "Submitting..." : "Submit Email"}
       </button>
       {submitMessage && (
-        <div className="email-notification" aria-live="polite" role="status">
+        <div
+          className={`email-notification ${showNotification ? "show" : ""}`}
+          aria-live="polite"
+          role="status"
+        >
           <p>{submitMessage}</p>
         </div>
       )}
