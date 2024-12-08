@@ -9,10 +9,10 @@ const Intro: React.FC = () => {
         alt="Author´s Logo"
       />
 
-      <div id="personal-container">
+      <div className="personal-container">
         <SocialNav />
         <img
-          id="author-photo"
+          className="author-photo"
           src="/assets/images/profilePic-removebg-Photoroom.png"
           alt="Author´s Photograph"
         />
@@ -37,9 +37,9 @@ const Intro: React.FC = () => {
           <span className="btn-text">Contact Me</span>
         </button>
       </div>
-      <a id="downArrowHook" href="#skills">
+      <a className="downArrowHook" href="#skills">
         <img
-          id="downArrow"
+          className="downArrow"
           src="/assets/icons/arrow_down.png"
           alt="Clickable arrow to go down a page"
         />
