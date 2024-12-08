@@ -4,7 +4,7 @@ import SocialNav from "../components/social-nav";
 const Contacts: React.FC = () => {
   return (
     <>
-      <section className="section-container">
+      <section className="section-container contact-container">
         <h2 className="page-title">Contacts</h2>
       </section>
 

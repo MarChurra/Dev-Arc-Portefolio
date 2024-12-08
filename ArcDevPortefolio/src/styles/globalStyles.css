@@ -21,6 +21,12 @@ body {
   scrollbar-width: none;
 }
 
+.fp-overflow {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Scrollbar  */
 ::-webkit-scrollbar {
   display: none;
@@ -49,14 +55,8 @@ body {
   background: linear-gradient(#303436, #303436);
   display: flex;
   flex-direction: column;
-  min-height: 100%;
-  overflow: auto;
-  justify-content: space-between;
-  position: relative;
-}
-
-#contactSection .fp-overflow {
-  min-height: 100%;
+  overflow: hidden;
+  justify-content: center;
 }
 
 /*loading screen*/
@@ -594,7 +594,7 @@ p {
 }
 
 .contact-form {
-  margin: 1em auto;
+  margin: 1em auto 1.5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -702,8 +702,6 @@ textarea {
 }
 
 .footer-wrapper {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   margin-top: auto;
 }
@@ -711,7 +709,6 @@ textarea {
 .project-footer {
   width: 85%;
   padding-top: 0.25em;
-  padding-bottom: 0.5em;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -733,7 +730,7 @@ textarea {
 }
 
 .project-footer::after {
-  top: 3px;
+  top: 5px;
 }
 
 .project-footer .social-navbar {
@@ -744,6 +741,9 @@ textarea {
 }
 
 .email-notification {
+  position: absolute;
+  bottom: 10%;
+  width: 65%;
   background-color: rgba(36, 37, 34, 0.9);
   z-index: 25;
   border-radius: 5px;
@@ -760,7 +760,6 @@ textarea {
 
 .email-notification p {
   text-align: center;
-  font-size: 0.8rem;
   padding: 1em 1.5em;
   color: silver;
   font-family: "Arcane", sans-serif;
@@ -941,6 +940,13 @@ textarea {
   }
 
   /*Contacts*/
+
+  .contact-form {
+    font-size: 1.25rem;
+    max-width: 55%;
+    min-width: 55%;
+  }
+
   textarea {
     min-height: 150px;
     max-height: 200px;
@@ -968,6 +974,7 @@ textarea {
   .btn-text {
     font-size: 1.2rem;
   }
+
   .contact-btn {
     margin-top: 1.25em;
     padding: 0.5em 1.3em;
@@ -1012,6 +1019,23 @@ textarea {
   }
 
   /*Contacts*/
+
+  .contact-form {
+    font-size: 1.5rem;
+    max-width: 65%;
+  }
+
+  textarea {
+    font-size: 1.5rem;
+  }
+
+  .form-button {
+    font-size: 1.4rem;
+  }
+
+  .email-notification p {
+    font-size: 1.2rem;
+  }
 }
 
 @media only screen and (min-width: 750px) {
