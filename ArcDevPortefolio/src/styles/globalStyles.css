@@ -290,6 +290,10 @@ p {
 
 .intro-info {
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   top: 43%;
   left: 5%;
 }
@@ -337,21 +341,12 @@ p {
   grid-template-columns: 1fr;
   gap: 1.5em;
   justify-items: center;
+  padding-top: 1.5em;
   margin: 0 0 3em;
 }
 
 .skill-container {
-  border-top: 0.5px solid #bbc6cc;
-  padding-top: 1em;
-}
-
-.skill-container:first-child {
-  border: none;
-}
-
-.skill-container:last-child {
-  border-bottom: 0.5px solid #bbc6cc;
-  padding-bottom: 1em;
+  border-bottom: 1px solid #bbc6cc;
 }
 
 .skill-title {
@@ -372,7 +367,8 @@ p {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   text-align: center;
-  margin-top: 0.25em;
+  margin-top: 0.5em;
+  padding-bottom: 1.5em;
 }
 
 /*Projects*/
@@ -708,6 +704,7 @@ textarea {
 
 .project-footer {
   width: 85%;
+  margin-bottom: 0.25em;
   padding-top: 0.25em;
   margin: auto;
   display: flex;
@@ -883,6 +880,11 @@ textarea {
 
   /*Skills*/
 
+  .skill-grid {
+    gap: 2.5em;
+    margin: 0 0 5em;
+  }
+
   /*Projects*/
 
   #projectsSection .page-title {
@@ -947,6 +949,15 @@ textarea {
     min-width: 55%;
   }
 
+  .form-input,
+  textarea {
+    font-size: 1.25rem;
+  }
+
+  .form-button {
+    font-size: 1.3rem;
+  }
+
   textarea {
     min-height: 150px;
     max-height: 200px;
@@ -959,9 +970,18 @@ textarea {
 }
 
 @media only screen and (min-width: 400px) {
+  .page-title {
+    font-size: 3rem;
+  }
+
   /*Navbar*/
 
   /*Intro*/
+
+  .app-logo {
+    top: 25px;
+  }
+
   .author-photo {
     height: 230px;
   }
@@ -969,6 +989,10 @@ textarea {
   .social-icon,
   .social-link {
     width: 30px;
+  }
+
+  .intro-info {
+    gap: 0.5em;
   }
 
   .btn-text {
@@ -980,7 +1004,19 @@ textarea {
     padding: 0.5em 1.3em;
   }
 
+  .downArrow {
+    width: 35px;
+  }
+
   /*Skills*/
+
+  .skill-title {
+    font-size: 2rem;
+  }
+
+  .skill-experience {
+    font-size: 1.25rem;
+  }
 
   /*Projects*/
 
@@ -1021,12 +1057,14 @@ textarea {
   /*Contacts*/
 
   .contact-form {
-    font-size: 1.5rem;
-    max-width: 65%;
+    font-size: 1.3rem;
+    max-width: 55%;
+    min-width: 55%;
   }
 
+  .form-input,
   textarea {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .form-button {
@@ -1034,11 +1072,15 @@ textarea {
   }
 
   .email-notification p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
 @media only screen and (min-width: 750px) {
+  .section-container {
+    height: 100vh;
+  }
+
   /*Text Styling */
   h1 {
     font-size: 3rem;
@@ -1049,12 +1091,12 @@ textarea {
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   p,
   input {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .page-title {
@@ -1133,11 +1175,11 @@ textarea {
 
   .contact-btn {
     margin-top: 1em;
-    padding: 0.35em 1em;
+    padding: 0.4em 1.25em;
   }
 
   .btn-text {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .downArrowHook,
@@ -1152,18 +1194,11 @@ textarea {
   .skill-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
+    gap: 2em;
+    column-gap: 0;
     justify-items: center;
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
-  }
-
-  .skill-grid > *:nth-child(-n + 2) {
-    border-top: none;
-  }
-
-  .skill-container {
-    border-top: 1px solid #bbc6cc;
   }
 
   /*Projects*/
