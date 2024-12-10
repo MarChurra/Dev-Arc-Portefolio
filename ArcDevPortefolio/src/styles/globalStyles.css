@@ -399,9 +399,7 @@ p {
 
 .frame {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 0%);
+  margin: 0 auto;
   width: 300px;
   height: 200px;
   background-image: url("/assets/icons/frame_sml.png");
@@ -419,7 +417,7 @@ p {
   width: 263px;
   height: 155.5px;
   margin-top: -0.25em;
-  margin-left: -0.2em;
+  margin-left: -0.1em;
   z-index: 5;
   position: relative;
 }
@@ -976,6 +974,10 @@ textarea {
 
   /*Navbar*/
 
+  .navbar-opt button {
+    border: 3px solid #e2c78f;
+  }
+
   /*Intro*/
 
   .app-logo {
@@ -1037,8 +1039,32 @@ textarea {
   }
 
   .project-details-container {
-    width: 284px;
-    height: 168.5px;
+    width: 345px;
+    height: 205.5px;
+  }
+
+  .project-title {
+    margin: 0.5em auto;
+    font-size: 1.3rem;
+    width: 60%;
+    height: 30%;
+  }
+
+  .details {
+    margin: 0 1.5em;
+    height: 40%;
+  }
+
+  .project-tech {
+    gap: 1.25em;
+  }
+
+  .project-link {
+    font-size: 1.25rem;
+  }
+
+  .tech-icon {
+    width: 27.5px;
   }
 
   .custom-arrow,
@@ -1079,6 +1105,7 @@ textarea {
 @media only screen and (min-width: 750px) {
   .section-container {
     height: 100vh;
+    width: 100%;
   }
 
   /*Text Styling */
@@ -1096,7 +1123,7 @@ textarea {
 
   p,
   input {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .page-title {
@@ -1128,21 +1155,25 @@ textarea {
 
   .navbar-container {
     top: 10%;
-    width: 80px;
-    padding: 0.75em 1.25em;
+    width: 90px;
+    padding: 1em 1.25em;
   }
 
   .navbar-opt {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin: 0.3em 0;
   }
 
+  .navbar-opt button {
+    border: 4px solid #e2c78f;
+  }
+
   .expanded-btn {
-    width: 125px;
+    width: 150px;
   }
 
   .navbar-container.expanded {
-    width: 170px;
+    width: 200px;
   }
 
   .personal-container {
@@ -1169,7 +1200,7 @@ textarea {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 1em;
+    gap: 0.75em;
     width: 70%;
   }
 
@@ -1184,7 +1215,7 @@ textarea {
 
   .downArrowHook,
   .downArrow {
-    width: 40px;
+    width: 50px;
     bottom: 20px;
     right: 20px;
   }
@@ -1194,14 +1225,57 @@ textarea {
   .skill-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2em;
+    gap: 3.5em;
     column-gap: 0;
     justify-items: center;
     width: 85%;
+    padding-top: 2em;
+    padding-left: 2.5em;
     margin: 0 auto;
   }
 
+  .skill-container {
+    border-bottom: 2px solid #bbc6cc;
+  }
+
+  .skill-title {
+    font-size: 2.25rem;
+  }
+
+  .skill-experience {
+    font-size: 1.4;
+  }
+
   /*Projects*/
+
+  .frame {
+    width: 550px;
+    height: 350px;
+    margin-bottom: 2.25em;
+  }
+
+  .frame-container {
+    width: 475px;
+    height: 284px;
+  }
+
+  .project-details-container {
+    width: 475px;
+    height: 284px;
+  }
+
+  .custom-arrow,
+  .custom-arrow-highlighted,
+  .selection-button,
+  .custom-arrow-img,
+  .selection-img {
+    width: 60px;
+  }
+
+  .selection-img-highlight,
+  .selection-button.active {
+    width: 75px;
+  }
 
   /*Contacts*/
 }
