@@ -11,23 +11,23 @@ import "swiper/css/effect-coverflow";
 import { Navigation, EffectFade, EffectCoverflow } from "swiper/modules";
 
 //Swiper Configurations
-const swiperBreakpoints = {
-  0: {
-    slidesPerView: 1,
-  },
-  768: {
-    slidesPerView: 1.5,
-    spaceBetween: 20,
-    effect: "coverflow",
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 100,
-      depth: 200,
-      modifier: 1,
-      slideShadows: false,
-    },
-  },
-};
+// const swiperBreakpoints = {
+//   0: {
+//     slidesPerView: 1,
+//   },
+//   1024: {
+//     slidesPerView: 1,
+//     spaceBetween: 20,
+//     effect: "coverflow",
+//     coverflowEffect: {
+//       rotate: 0,
+//       stretch: 100,
+//       depth: 200,
+//       modifier: 1,
+//       slideShadows: false,
+//     },
+//   },
+// };
 
 const swiperModules = [Navigation, EffectFade, EffectCoverflow];
 
@@ -55,7 +55,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
             speed={250}
             modules={swiperModules}
             onSlideChange={handleSlideChange}
-            breakpoints={swiperBreakpoints}
+            // breakpoints={swiperBreakpoints}
             className="mySwiper"
             onSwiper={setSwiperInstance}
           >

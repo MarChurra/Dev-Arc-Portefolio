@@ -190,7 +190,7 @@ p {
   justify-content: center;
   align-items: center;
   position: fixed;
-  z-index: 5;
+  z-index: 50;
   top: 9%;
   background-color: rgba(126, 128, 123, 0.7);
   padding: 0.25em 0.8em;
@@ -410,7 +410,7 @@ p {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  z-index: 10;
+  z-index: 15;
 }
 
 .frame-container {
@@ -578,7 +578,7 @@ p {
   margin: 1em auto;
   font-size: 1rem;
   width: 80%;
-  text-align: left;
+  text-align: center;
   color: #bbc6cc;
 }
 
@@ -1249,19 +1249,52 @@ textarea {
   /*Projects*/
 
   .frame {
-    width: 550px;
-    height: 350px;
+    width: 575px;
+    height: 380px;
     margin-bottom: 2.25em;
   }
 
   .frame-container {
-    width: 475px;
-    height: 284px;
+    width: 500px;
+    margin-left: -5px;
+    margin-top: -8px;
+    height: 296px;
   }
 
   .project-details-container {
-    width: 475px;
-    height: 284px;
+    width: 500px;
+    height: 296px;
+  }
+
+  .project-title {
+    font-size: 2rem;
+    margin-bottom: 1em;
+    width: 70%;
+  }
+
+  .details {
+    height: 35%;
+    margin: 0 2.5em;
+  }
+
+  .project-tech {
+    gap: 1.75em;
+  }
+
+  .tech-icon {
+    width: 40px;
+  }
+
+  .project-links-container {
+    padding-bottom: 2em;
+  }
+
+  .project-link {
+    font-size: 1.75rem;
+  }
+
+  .selection-container {
+    gap: 1em;
   }
 
   .custom-arrow,
@@ -1277,7 +1310,74 @@ textarea {
     width: 75px;
   }
 
+  .selector-separator {
+    width: 7.5px;
+    height: auto;
+  }
+
   /*Contacts*/
+  .contact-form {
+    max-width: 60%;
+    min-width: 60%;
+    gap: 1.5em;
+  }
+
+  .form-input {
+    font-size: 1.5rem;
+    border-bottom: 2.5px solid#bbc6cc;
+  }
+
+  .form-button {
+    border-bottom: 2.5px solid#bbc6cc;
+  }
+
+  .form-input:focus,
+  .form-button:focus,
+  .form-button.active:focus,
+  textarea:focus,
+  input:-webkit-autofill:focus,
+  input:autofill:focus {
+    border-bottom: 3px solid#FFF2B2;
+  }
+
+  .form-button:focus,
+  .form-button.active {
+    border-bottom: 3px solid#FFF2B2;
+  }
+
+  .form-button {
+    font-size: 1.6rem;
+  }
+
+  .email-notification {
+    width: 50%;
+  }
+
+  .email-notification p {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    padding: 1em;
+  }
+
+  .footer-logo {
+    width: 70px;
+  }
+
+  .project-footer {
+    width: 90%;
+    margin-bottom: 1em;
+  }
+
+  .project-footer .social-navbar {
+    margin: 2em 0;
+    gap: 1.5em;
+  }
+
+  textarea {
+    min-height: 250px;
+    max-height: 250px;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
