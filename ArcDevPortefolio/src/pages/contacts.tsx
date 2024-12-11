@@ -6,14 +6,15 @@ const Contacts: React.FC = () => {
     <>
       <section className="section-container contact-container">
         <h2 className="page-title">Contacts</h2>
+
+        <p className="contact-info desktop-only">
+          I would be honored if you are interested in my work. <br />
+          Feel free to contact me via the form below.
+        </p>
+
+        <ContactForm />
+        
       </section>
-
-      <p className="contact-info desktop-only">
-        I would be honored if you are interested in my work. <br />
-        Feel free to contact me via the form below.
-      </p>
-
-      <ContactForm />
 
       <div className="footer-wrapper">
         <footer className="project-footer">

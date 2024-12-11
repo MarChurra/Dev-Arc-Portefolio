@@ -1295,6 +1295,7 @@ textarea {
 
   .selection-container {
     gap: 1em;
+    margin: 0 1em;
   }
 
   .custom-arrow,
@@ -1311,7 +1312,7 @@ textarea {
   }
 
   .selector-separator {
-    width: 7.5px;
+    width: 10px;
     height: auto;
   }
 
@@ -1320,6 +1321,13 @@ textarea {
     max-width: 60%;
     min-width: 60%;
     gap: 1.5em;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .form-input {
@@ -1366,7 +1374,7 @@ textarea {
 
   .project-footer {
     width: 90%;
-    margin-bottom: 1em;
+    padding-bottom: 1em;
   }
 
   .project-footer .social-navbar {
@@ -1381,7 +1389,9 @@ textarea {
 }
 
 @media only screen and (min-width: 1025px) {
+
   /*Navbar*/
+  
 
   /*Intro*/
 
@@ -1390,7 +1400,7 @@ textarea {
   /*Projects*/
 
   .frame {
-    background-image: url("/assets/icons/lg.png");
+    background-image: url("/assets/icons/frame_lg.png");
   }
 
   /*Contacts*/
