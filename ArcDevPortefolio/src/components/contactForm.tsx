@@ -62,7 +62,7 @@ const ContactForm: React.FC = () => {
       setTimeout(() => {
         setShowNotification(false);
         setSubmitMessage("");
-      }, 3000);
+      }, 2500);
     }
   };
 

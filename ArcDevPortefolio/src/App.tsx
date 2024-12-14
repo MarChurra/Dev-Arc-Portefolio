@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 
+import navigationAnchors from "./mappedInfo/navigationAnchors";
+
 import Loading from "./pages/loading";
 import Intro from "./pages/intro";
 import Skills from "./pages/skills";
@@ -13,24 +15,26 @@ const FullPageWrapper: React.FC = () => {
   // Track loading state
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  // Add event listener for the load event
+  const handlePageLoad = () => {
+    setIsLoading(false); // Finish loading as soon as app content has fully loaded
+  };
+
   //Track current section being seen by the user
   const [currentSection, setCurrentSection] = useState<string>(
     window.location.hash ? window.location.hash.slice(1) : "intro"
   );
 
-  //If the user was not in the intro Page, maintain the page that the user is viewing upon page refresh
+  //UseEffect to handle the loading and the automatic navigation upon page refresh 
   useEffect(() => {
+
+    //If the user was not in the intro Page, maintain the page that the user is viewing upon page refresh
     const handleHashChange = () => {
       // Update the state when the hash changes
       setCurrentSection(window.location.hash.slice(1));
     };
 
     window.addEventListener("hashchange", handleHashChange);
-
-    // Add event listener for the load event
-    const handlePageLoad = () => {
-      setIsLoading(false); // Finish loading as soon as app content has fully loaded
-    };
 
     // Attach the event listener for the window load event
     if (document.readyState === "complete") {
@@ -47,14 +51,6 @@ const FullPageWrapper: React.FC = () => {
     };
   }, []);
 
-  const navigationAnchors = [
-    { name: "intro", label: "Intro", text: "I" },
-    { name: "skills", label: "Skills", text: "S" },
-    { name: "projects", label: "Projects", text: "P" },
-    { name: "contacts", label: "Contacts", text: "C" },
-  ];
-
-  const pageAnchors = navigationAnchors.map((anchor) => anchor.name);
 
   return (
     <>
@@ -68,7 +64,7 @@ const FullPageWrapper: React.FC = () => {
 
         <ReactFullpage
           scrollingSpeed={850}
-          anchors={pageAnchors}
+          anchors={navigationAnchors.map((anchor) => anchor.name)}
           scrollBar={false} //Scrollbar is hidden with CSS. Without scrollbar property, the height of the sections inst being correctly calculated
           verticalCentered={false}
           fitToSection={true}

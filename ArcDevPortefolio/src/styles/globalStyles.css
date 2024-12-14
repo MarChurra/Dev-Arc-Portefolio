@@ -196,15 +196,16 @@ p {
   padding: 0.25em 0.8em;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  transition: width 0.1s ease;
   width: 50px;
   -webkit-box-shadow: 0px 0px 1.5px 0px rgba(28, 28, 28, 1);
   -moz-box-shadow: 0px 0px 1.5px 0px rgba(28, 28, 28, 1);
   box-shadow: 0px 0px 1.5px 0px rgba(28, 28, 28, 1);
+  transition: all 0.1s ease;
 }
 
 .navbar-container.expanded {
   width: 100px;
+  transition: all 0.1s ease;
 }
 
 .navbar {
@@ -213,6 +214,7 @@ p {
   list-style-type: none;
   justify-content: center;
   align-items: center;
+  transition: all 0.1s ease;
 }
 
 .navbar-opt {
@@ -220,6 +222,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s ease;
 }
 
 .navbar-opt button {
@@ -231,6 +234,7 @@ p {
   outline: none;
   font-weight: 500;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 .navbar-opt button.active {
@@ -240,6 +244,7 @@ p {
 .expanded-btn {
   width: 70px;
   text-align: center;
+  transition: all 0.5s ease;
 }
 
 .navbar.disabled button {
@@ -262,7 +267,7 @@ p {
 .personal-container {
   position: fixed;
   right: 15px;
-  border: 1.25px solid #fff2b2;
+  border: 2px solid #fff2b2;
   border-radius: 15px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -284,7 +289,7 @@ p {
 }
 
 .author-photo {
-  height: 140px;
+  height: 150px;
   opacity: 65%;
 }
 
@@ -763,6 +768,7 @@ textarea {
 /*Media Queries*/
 
 @media only screen and (min-width: 350px) {
+
   /*Text Styling */
   h1 {
     font-size: 2.5rem;
@@ -836,7 +842,6 @@ textarea {
   .personal-container {
     top: -0.5vh;
     right: 20px;
-    border: 1.5px solid #fff2b2;
     border-radius: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -852,7 +857,7 @@ textarea {
   }
 
   .author-photo {
-    height: 175px;
+    height: 200px;
     opacity: 55%;
   }
 
@@ -1130,8 +1135,6 @@ textarea {
     font-size: 3rem;
   }
 
-  /*Navbar*/
-
   .loading-spinner,
   .spinner {
     width: 400px;
@@ -1145,13 +1148,7 @@ textarea {
     width: 245px;
   }
 
-  /*Intro*/
-
-  .app-logo {
-    width: 70px;
-    left: 20px;
-    top: 30px;
-  }
+  /*Navbar*/
 
   .navbar-container {
     top: 10%;
@@ -1174,6 +1171,14 @@ textarea {
 
   .navbar-container.expanded {
     width: 200px;
+  }
+
+  /*Intro*/
+
+  .app-logo {
+    width: 70px;
+    left: 20px;
+    top: 30px;
   }
 
   .personal-container {
@@ -1390,10 +1395,123 @@ textarea {
 
 @media only screen and (min-width: 1025px) {
 
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  /*Loading*/
+
+  .loading-spinner,
+  .spinner {
+    width: 500px;
+    height: 500px;
+  }
+
+  .loading-logo {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+  }
+
   /*Navbar*/
-  
+
+
+  .navbar-container {
+    top: 13%;
+    width: 80px;
+    padding: 0.5em 1em;
+  }
+
+  .navbar-opt {
+    font-size: 1.25rem;
+    margin: 0.3em 0;
+  }
+
+  .navbar-opt button {
+    border: 3px solid #e2c78f;
+  }
+
+  .navbar-opt button:hover {
+    transform: scale(1.1);
+  }
+
+  .expanded-btn {
+    width: 100px;
+  }
+
+  .navbar-container.expanded {
+    width: 155px;
+  }
 
   /*Intro*/
+
+.author-photo {
+  height: 375px;
+}
+
+  .app-logo,
+  .footer-logo {
+    width: 75px;
+    left: 30px;
+    top: 30px;
+  }
+
+  .personal-container {
+    right: 5%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 3px solid #fff2b2;
+  }
+
+  .social-navbar {
+    margin: 2.5em 0 1.5em;
+  }
+
+  .social-icon,
+  .social-link {
+    width: 40px;
+  }
+
+  .intro-info {
+    margin-top: -5%;
+    margin-left: 7.5%;
+    gap: 0.5em;
+    width: 50%;
+  }
+
+  .intro-info p {
+    line-height: 1.7;
+  }
+
+  .contact-btn {
+    margin-top: 1.5em;
+    padding: 0.5em 1.3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .contact-btn:hover {
+    transform: scale(1.05);
+    transition: all 0.25s ease;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(194, 204, 209, 1);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(194, 204, 209, 1);
+    box-shadow: 0px 0px 3px 1px rgba(194, 204, 209, 1);
+  }
+
+  .btn-text {
+    font-size: 2rem;
+  }
+
+  .downArrowHook,
+  .downArrow {
+    width: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+
 
   /*Skills*/
 
@@ -1425,6 +1543,7 @@ textarea {
 /*Animations*/
 
 @keyframes bounce {
+
   0%,
   100% {
     transform: translateY(0);
@@ -1439,6 +1558,7 @@ textarea {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

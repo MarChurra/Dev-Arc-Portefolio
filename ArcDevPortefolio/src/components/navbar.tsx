@@ -8,9 +8,15 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ anchors, currentSection }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  const isDesktopView = window.innerWidth >= 1024;
+
   //Handles the expansion and collapsing of the navbar
   const handleNavbarToggle = () => {
-    setIsExpanded((prev) => !prev);
+    if (!isDesktopView) {
+      setIsExpanded((prev) => !prev);
+    }
   };
 
   //Collapse the Expanded Navbar
@@ -21,14 +27,32 @@ const Navbar: React.FC<NavbarProps> = ({ anchors, currentSection }) => {
     }
   };
 
+  // Listen for click events to close the navbar when clicking outside
   useEffect(() => {
-    // Listen for click events to close the navbar when clicking outside
     document.addEventListener("click", handleClickOutside);
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
+  //Allow navbar to expand upon mouse hover on desktop view
+  const handleMouseEnter = () => {
+    if (isDesktopView) {
+      setIsHovered(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (isDesktopView) {
+      setIsHovered(false);
+    }
+  };
+
+
+  //Accept either hover or Active State by clicking the element 
+  const isNavbarExpanded = isHovered || isExpanded;
+
+  //Navigation between pages upon page click 
   const handleOptionClick = (name: string) => {
     window.location.hash = name;
     setIsExpanded(false);
@@ -37,24 +61,25 @@ const Navbar: React.FC<NavbarProps> = ({ anchors, currentSection }) => {
   return (
     <nav
       onClick={handleNavbarToggle}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className={`navbar-container 
-        ${isExpanded ? "expanded" : ""}
+        ${isNavbarExpanded ? "expanded" : ""}
         `}
     >
-      <ul className={`navbar ${!isExpanded ? "disabled" : ""}`}>
+      <ul className={`navbar ${!isNavbarExpanded ? "disabled" : ""}`}>
         {anchors.map((anchor, index) => (
           <li key={index} className="navbar-opt">
             <button
               aria-label={`Navigate to ${anchor.label}`}
-              className={`navbar-opt ${
-                anchor.name === currentSection ? "active" : ""
-              }
-                ${isExpanded ? "expanded-btn" : ""}`}
+              className={`navbar-opt ${anchor.name === currentSection ? "active" : ""
+                }
+                ${isNavbarExpanded ? "expanded-btn" : ""}`}
               onClick={() => {
                 handleOptionClick(anchor.name);
               }}
             >
-              {isExpanded ? anchor.label : anchor.text}
+              {isNavbarExpanded ? anchor.label : anchor.text}
             </button>
           </li>
         ))}
