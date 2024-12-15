@@ -30,6 +30,14 @@ const ContactForm: React.FC = () => {
       ...prevState,
       [name]: value,
     }));
+
+    autoExpandTextArea(e.target);
+  };
+
+  // Allows automatica resize of the textarea upon text input or deleting
+  const autoExpandTextArea = (textarea: HTMLElement) => {
+    textarea.style.height = "auto";
+    textarea.style.height = `${textarea.scrollHeight}px`;
   };
 
   // Handle form submission
