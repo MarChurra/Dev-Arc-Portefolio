@@ -5,12 +5,16 @@ interface CustomNavigationProps {
   swiperInstance: any | null;
   activeProjectId: string;
   goToSlide: (id: string) => void;
+  toggleDetails: () => void;
+  showDetails: boolean;
 }
 
 const CustomNavigation: React.FC<CustomNavigationProps> = ({
   swiperInstance,
   activeProjectId,
   goToSlide,
+  toggleDetails,
+  showDetails,
 }) => {
   // Handle key down events for arrow navigation
   useEffect(() => {
@@ -57,7 +61,12 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
     <div className="projects-navigation">
       <button
         className="custom-arrow"
-        onClick={() => swiperInstance?.slidePrev()}
+        onClick={() => {
+          swiperInstance?.slidePrev();
+          if (showDetails) {
+            toggleDetails();
+          }
+        }}
         aria-label="Navigate to the previous project"
       >
         <img
@@ -80,7 +89,12 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
               className={`selection-button ${
                 activeProjectId === project.id ? "active" : ""
               }`}
-              onClick={() => goToSlide(project.id)}
+              onClick={() => {
+                goToSlide(project.id);
+                if (showDetails) {
+                  toggleDetails();
+                }
+              }}
               aria-label={`Navigate to the project number ${index + 1}`}
             >
               <img
@@ -110,7 +124,12 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
 
       <button
         className="custom-arrow"
-        onClick={() => swiperInstance?.slideNext()}
+        onClick={() => {
+          swiperInstance?.slideNext();
+          if (showDetails) {
+            toggleDetails();
+          }
+        }}
         aria-label="Navigate to the next project"
       >
         <img

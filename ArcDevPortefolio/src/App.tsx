@@ -9,9 +9,9 @@ import Skills from "./pages/skills";
 import Projects from "./pages/projects";
 import Contacts from "./pages/contacts";
 import Navbar from "./components/navbar";
+import DownArrow from "./components/downArrow";
 
 const FullPageWrapper: React.FC = () => {
-
   // Track loading state
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -25,9 +25,8 @@ const FullPageWrapper: React.FC = () => {
     window.location.hash ? window.location.hash.slice(1) : "intro"
   );
 
-  //UseEffect to handle the loading and the automatic navigation upon page refresh 
+  //UseEffect to handle the loading and the automatic navigation upon page refresh
   useEffect(() => {
-
     //If the user was not in the intro Page, maintain the page that the user is viewing upon page refresh
     const handleHashChange = () => {
       // Update the state when the hash changes
@@ -51,10 +50,8 @@ const FullPageWrapper: React.FC = () => {
     };
   }, []);
 
-
   return (
     <>
-
       <div className={`loading-screen ${isLoading ? "" : "hidden"}`}>
         <Loading />
       </div>
@@ -79,6 +76,7 @@ const FullPageWrapper: React.FC = () => {
                 <ReactFullpage.Wrapper>
                   <div id="introSection" className="section">
                     <Intro />
+                    <DownArrow nextSectionId="#skills" />
                   </div>
                   <div id="skillsSection" className="section">
                     <Skills />

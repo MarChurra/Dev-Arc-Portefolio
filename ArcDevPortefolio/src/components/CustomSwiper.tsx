@@ -1,5 +1,6 @@
 import { oldProjects } from "../mappedInfo/pastProjects";
 import { TechnologiesMap } from "../mappedInfo/technologiesMap";
+import useIsDesktop from "../hooks/currentViewport";
 
 //Swiper Components and stylings
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,25 +10,6 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/css/effect-coverflow";
 import { Navigation, EffectFade, EffectCoverflow } from "swiper/modules";
-
-//Swiper Configurations
-// const swiperBreakpoints = {
-//   0: {
-//     slidesPerView: 1,
-//   },
-//   1024: {
-//     slidesPerView: 1,
-//     spaceBetween: 20,
-//     effect: "coverflow",
-//     coverflowEffect: {
-//       rotate: 0,
-//       stretch: 100,
-//       depth: 200,
-//       modifier: 1,
-//       slideShadows: false,
-//     },
-//   },
-// };
 
 const swiperModules = [Navigation, EffectFade, EffectCoverflow];
 
@@ -44,9 +26,16 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
   handleSlideChange,
   setSwiperInstance,
 }) => {
+  //Toggles the show Details when user hovers the container in a desktop or higher viewport
+  const isDesktop = useIsDesktop();
+
   return (
     <>
-      <div className="frame">
+      <div
+        className="frame"
+        onMouseEnter={isDesktop ? toggleDetails : undefined}
+        onMouseLeave={isDesktop ? toggleDetails : undefined}
+      >
         <div className="frame-container">
           <Swiper
             loop={true}
@@ -55,7 +44,6 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
             speed={250}
             modules={swiperModules}
             onSlideChange={handleSlideChange}
-            // breakpoints={swiperBreakpoints}
             className="mySwiper"
             onSwiper={setSwiperInstance}
           >
@@ -67,12 +55,16 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
                   srcSet={`${project.thumbnailSML} 350w, ${project.thumbnailLg} 1000w`}
                   sizes="(max-width: 350px) 100vw, (max-width: 1000px) 100vw, 1024px"
                   alt={`${project.title} thumbnail`}
-                  onClick={toggleDetails}
+                  onClick={!isDesktop ? toggleDetails : undefined}
                 />
                 <div
                   className={`project-details-container ${
                     showDetails ? "visible" : ""
                   }`}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    if (!isDesktop) toggleDetails();
+                  }}
                 >
                   <h3 className="project-title">{project.title}</h3>
                   <div className="details">

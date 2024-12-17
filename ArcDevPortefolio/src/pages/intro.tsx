@@ -37,13 +37,6 @@ const Intro: React.FC = () => {
           <span className="btn-text">Contact Me</span>
         </button>
       </div>
-      <a className="downArrowHook" href="#skills">
-        <img
-          className="downArrow"
-          src="/assets/icons/arrow_down.png"
-          alt="Clickable arrow to go down a page"
-        />
-      </a>
     </>
   );
 };

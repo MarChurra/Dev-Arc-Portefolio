@@ -1,5 +1,4 @@
 import { knowledge } from "../mappedInfo/knowledge";
-
 //Format the text in the paragraph
 const formatSkillsContent = (years: number): string => {
   if (years < 1) return "<1 Year of Experience";

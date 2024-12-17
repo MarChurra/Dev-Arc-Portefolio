@@ -4,7 +4,11 @@ import CustomSwiper from "../components/CustomSwiper";
 import CustomNavigation from "../components/customNavigation";
 import { Swiper as SwiperCore } from "swiper";
 
-const Projects: React.FC = () => {
+interface ProjectProps {
+  nextSectionId?: string;
+}
+
+const Projects: React.FC<ProjectProps> = () => {
   //States to keep track of the current project being seen
   const [activeProjectId, setActiveProjectId] = useState<string>(
     oldProjects[0].id
@@ -33,25 +37,24 @@ const Projects: React.FC = () => {
   }, []);
 
   return (
-    <section
-      className="section-container"
-      onClick={() => {
-        showDetails && toggleDetails();
-      }}
-    >
-      <h2 className="page-title">Projects</h2>
-      <CustomSwiper
-        toggleDetails={toggleDetails}
-        showDetails={showDetails}
-        handleSlideChange={handleSlideChange}
-        setSwiperInstance={setSwiperInstance}
-      />
-      <CustomNavigation
-        swiperInstance={swiperInstance}
-        activeProjectId={activeProjectId}
-        goToSlide={goToSlide}
-      />
-    </section>
+    <>
+      <section className="section-container">
+        <h2 className="page-title">Projects</h2>
+        <CustomSwiper
+          toggleDetails={toggleDetails}
+          showDetails={showDetails}
+          handleSlideChange={handleSlideChange}
+          setSwiperInstance={setSwiperInstance}
+        />
+        <CustomNavigation
+          swiperInstance={swiperInstance}
+          activeProjectId={activeProjectId}
+          goToSlide={goToSlide}
+          showDetails={showDetails}
+          toggleDetails={toggleDetails}
+        />
+      </section>
+    </>
   );
 };
 
