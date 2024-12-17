@@ -52,7 +52,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
                 <img
                   className="project-image"
                   src={project.thumbnailLg}
-                  srcSet={`${project.thumbnailSML} 350w, ${project.thumbnailLg} 1000w`}
+                  srcSet={`${project.thumbnailSML} 500w, ${project.thumbnailLg} 1000w`}
                   sizes="(max-width: 350px) 100vw, (max-width: 1000px) 100vw, 1024px"
                   alt={`${project.title} thumbnail`}
                   onClick={!isDesktop ? toggleDetails : undefined}
