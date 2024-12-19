@@ -10,7 +10,7 @@ const formatSkillsContent = (years: number): string => {
 const Skills: React.FC = () => {
   return (
     <>
-      <section className="section-container">
+      <section className="section-container skills-container">
         <h2 className="page-title">Skills</h2>
         <div className="skill-grid">
           {knowledge.map((skill, index) => (

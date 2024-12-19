@@ -38,7 +38,7 @@ const Projects: React.FC<ProjectProps> = () => {
 
   return (
     <>
-      <section className="section-container">
+      <section className="section-container projects-container">
         <h2 className="page-title">Projects</h2>
         <CustomSwiper
           toggleDetails={toggleDetails}

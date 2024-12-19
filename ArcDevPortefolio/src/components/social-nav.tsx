@@ -5,6 +5,7 @@ const SocialNav: React.FC = () => {
         <a
           className="social-link"
           href="https://www.linkedin.com/in/marcochurra/"
+          target="_blank"
         >
           <img
             className="social-icon"
@@ -14,7 +15,11 @@ const SocialNav: React.FC = () => {
         </a>
       </li>
       <li className="social-option">
-        <a className="social-link" href="https://github.com/MarChurra">
+        <a
+          className="social-link"
+          href="https://github.com/MarChurra"
+          target="_blank"
+        >
           <img
             className="social-icon"
             src="/assets/icons/github_icon.png"
@@ -26,6 +31,7 @@ const SocialNav: React.FC = () => {
         <a
           className="social-link"
           href="https://api.whatsapp.com/send/?phone=351969728516&text&type=phone_number&app_absent=0"
+          target="_blank"
         >
           <img
             className="social-icon"
@@ -35,7 +41,10 @@ const SocialNav: React.FC = () => {
         </a>
       </li>
       <li className="social-option">
-        <a className="social-link" href="mailto:mchurra.dev@outlook.pt">
+        <a
+          className="social-link"
+          href="mailto:mchurra.dev@outlook.pt"
+        >
           <img
             className="social-icon"
             src="/assets/icons/mail_icon.png"

@@ -44,8 +44,8 @@ const ContactForm: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmittingMessage(true);
-    setShowNotification(true);
     setSubmitMessage("");
+    setShowNotification(true);
 
     try {
       const result = await emailjs.send(
@@ -66,11 +66,8 @@ const ContactForm: React.FC = () => {
       setSubmitMessage("An error occurred. Please try again.");
     } finally {
       setSubmittingMessage(false);
-
-      setTimeout(() => {
-        setShowNotification(false);
-        setSubmitMessage("");
-      }, 2500);
+      setTimeout(() => setShowNotification(false), 2500);
+      setTimeout(() => setSubmitMessage(""), 3500);
     }
   };
 
@@ -112,15 +109,21 @@ const ContactForm: React.FC = () => {
       ></textarea>
 
       <button
-        className={`form-button ${submittingMessage ? "active" : ""}`}
+        className={`form-button ${
+          submittingMessage ? "active remove-border" : ""
+        }`}
         type="submit"
         disabled={submittingMessage}
       >
-        {submittingMessage ? "Submitting..." : "Submit Email"}
+        {submittingMessage ? (
+          <span className="notification-loader"></span>
+        ) : (
+          "Submit"
+        )}
       </button>
       {submitMessage && (
         <div
-          className={`email-notification ${showNotification ? "show" : ""}`}
+          className={`email-notification ${showNotification ? "show" : "hide"}`}
           aria-live="polite"
           role="status"
         >

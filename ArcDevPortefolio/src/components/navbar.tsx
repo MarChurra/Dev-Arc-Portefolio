@@ -48,11 +48,10 @@ const Navbar: React.FC<NavbarProps> = ({ anchors, currentSection }) => {
     }
   };
 
-
-  //Accept either hover or Active State by clicking the element 
+  //Accept either hover or Active State by clicking the element
   const isNavbarExpanded = isHovered || isExpanded;
 
-  //Navigation between pages upon page click 
+  //Navigation between pages upon page click
   const handleOptionClick = (name: string) => {
     window.location.hash = name;
     setIsExpanded(false);
@@ -65,15 +64,22 @@ const Navbar: React.FC<NavbarProps> = ({ anchors, currentSection }) => {
       onMouseLeave={handleMouseLeave}
       className={`navbar-container 
         ${isNavbarExpanded ? "expanded" : ""}
+        ${window.location.hash !== "#intro" ? "top-navbar" : ""}
         `}
     >
-      <ul className={`navbar ${!isNavbarExpanded ? "disabled" : ""}`}>
+      <ul
+        className={`navbar 
+        ${!isNavbarExpanded ? "disabled" : ""}
+        ${window.location.hash !== "#intro" ? "top-navbar" : ""}
+      `}
+      >
         {anchors.map((anchor, index) => (
           <li key={index} className="navbar-opt">
             <button
               aria-label={`Navigate to ${anchor.label}`}
-              className={`navbar-opt ${anchor.name === currentSection ? "active" : ""
-                }
+              className={`navbar-opt ${
+                anchor.name === currentSection ? "active" : ""
+              }
                 ${isNavbarExpanded ? "expanded-btn" : ""}`}
               onClick={() => {
                 handleOptionClick(anchor.name);
