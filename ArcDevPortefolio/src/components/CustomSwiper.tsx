@@ -18,6 +18,7 @@ interface CustomSwiperProps {
   showDetails: boolean;
   handleSlideChange: (swiper: SwiperCore) => void;
   setSwiperInstance: (swiper: SwiperCore) => void;
+  setShowDetails: (value: boolean) => void;
 }
 
 const CustomSwiper: React.FC<CustomSwiperProps> = ({
@@ -25,6 +26,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
   showDetails,
   handleSlideChange,
   setSwiperInstance,
+  setShowDetails,
 }) => {
   //Toggles the show Details when user hovers the container in a desktop or higher viewport
   const isDesktop = useIsDesktop();
@@ -34,7 +36,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
       <div
         className="frame"
         onMouseEnter={isDesktop ? toggleDetails : undefined}
-        onMouseLeave={isDesktop ? toggleDetails : undefined}
+        onMouseLeave={isDesktop ? () => setShowDetails(false) : undefined}
       >
         <div className="frame-container">
           <Swiper

@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { oldProjects } from "../mappedInfo/pastProjects";
 import CustomSwiper from "../components/CustomSwiper";
 import CustomNavigation from "../components/customNavigation";
@@ -30,29 +30,50 @@ const Projects: React.FC<ProjectProps> = () => {
   };
 
   //Manage if the details of the project are visible or not
-  const [showDetails, setShowDetails] = useState<boolean>(false);
+  const [showDetails, setShowDetails] = useState<boolean>(true);
+  const [isBlocked, setIsBlocked] = useState<boolean>(true);
 
   const toggleDetails = useCallback(() => {
-    setShowDetails((prev) => !prev);
-  }, []);
+    if (!isBlocked) {
+      //Prevent Toggling the details on
+      setShowDetails((prev) => !prev);
+    }
+  }, [isBlocked, showDetails]);
+
+  useEffect(() => {
+    if (window.location.hash === "#projects") {
+      setShowDetails(true);
+      setIsBlocked(true);
+
+      const timer = setTimeout(() => {
+        setShowDetails(false);
+        setIsBlocked(false);
+      }, 1250);
+
+      return () => clearTimeout(timer);
+    }
+  }, [window.location.hash]);
 
   return (
     <>
       <section className="section-container projects-container">
-        <h2 className="page-title">Projects</h2>
-        <CustomSwiper
-          toggleDetails={toggleDetails}
-          showDetails={showDetails}
-          handleSlideChange={handleSlideChange}
-          setSwiperInstance={setSwiperInstance}
-        />
-        <CustomNavigation
-          swiperInstance={swiperInstance}
-          activeProjectId={activeProjectId}
-          goToSlide={goToSlide}
-          showDetails={showDetails}
-          toggleDetails={toggleDetails}
-        />
+        <div className="project-slider">
+          <h2 className="page-title">Projects</h2>
+          <CustomSwiper
+            toggleDetails={toggleDetails}
+            showDetails={showDetails}
+            handleSlideChange={handleSlideChange}
+            setSwiperInstance={setSwiperInstance}
+            setShowDetails={setShowDetails}
+          />
+          <CustomNavigation
+            swiperInstance={swiperInstance}
+            activeProjectId={activeProjectId}
+            goToSlide={goToSlide}
+            showDetails={showDetails}
+            toggleDetails={toggleDetails}
+          />
+        </div>
       </section>
     </>
   );
