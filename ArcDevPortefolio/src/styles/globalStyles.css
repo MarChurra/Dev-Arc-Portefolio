@@ -1935,6 +1935,12 @@ textarea {
   }
 }
 
+@media only screen and (min-width: 1750px) {
+.project-slider {
+  margin-top: 5em;
+}
+}
+
 @media only screen and (min-width: 2000px) {
   .fp-overflow {
     display: flex;
