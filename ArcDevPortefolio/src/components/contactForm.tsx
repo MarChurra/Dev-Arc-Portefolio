@@ -63,7 +63,8 @@ const ContactForm: React.FC = () => {
       setFormData({ name: "", email: "", message: "" }); // Clear the form fields
     } catch (error) {
       console.error("Error sending email:", error);
-      setSubmitMessage("An error occurred. Please try again.");
+      setSubmitMessage("An error occurred. Please try again");
+
     } finally {
       setSubmittingMessage(false);
       setTimeout(() => setShowNotification(false), 2500);
@@ -109,9 +110,8 @@ const ContactForm: React.FC = () => {
       ></textarea>
 
       <button
-        className={`form-button ${
-          submittingMessage ? "active remove-border" : ""
-        }`}
+        className={`form-button ${submittingMessage ? "active remove-border" : ""
+          }`}
         type="submit"
         disabled={submittingMessage}
       >
