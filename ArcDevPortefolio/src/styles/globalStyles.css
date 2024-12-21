@@ -926,6 +926,7 @@ textarea {
 }
 
 @media only screen and (min-width: 350px) {
+
   /*Text Styling */
   h1 {
     font-size: 2.5rem;
@@ -1445,14 +1446,14 @@ textarea {
   }
 
   .frame-container {
-    width: 500px;
+    width: 495px;
     height: 304px;
     margin-left: -5px;
     margin-top: -8px;
   }
 
   .project-details-container {
-    width: 500px;
+    width: 495px;
     height: 304px;
   }
 
@@ -1936,9 +1937,9 @@ textarea {
 }
 
 @media only screen and (min-width: 1750px) {
-.project-slider {
-  margin-top: 5em;
-}
+  .project-slider {
+    margin-top: 5em;
+  }
 }
 
 @media only screen and (min-width: 2000px) {
@@ -2214,6 +2215,7 @@ textarea {
 /*Animations*/
 
 @keyframes bounce {
+
   0%,
   100% {
     transform: translateY(0);
@@ -2228,6 +2230,7 @@ textarea {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
