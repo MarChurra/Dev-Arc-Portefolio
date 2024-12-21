@@ -39,7 +39,7 @@ export const oldProjects: Project[] = [
     title: "Webflix",
     thumbnail: "/assets/projects/movie.lg.png",
     techStack: ["css", "js"],
-    src: "https://flixweb.netlify.app/",
+    src: "https://twimbaxclone.netlify.app/",
     github: "https://github.com/MarChurra/YourMovieWatchList",
   },
   {
