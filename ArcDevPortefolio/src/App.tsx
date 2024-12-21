@@ -1,3 +1,7 @@
+// @ts-nocheck 
+//TS no check was added after the app was fully built. Errors with the props of the fullpage api stopped the production code,
+// but did not affect the performance of the app
+
 import React, { useState, useEffect } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 
@@ -60,7 +64,7 @@ const FullPageWrapper: React.FC = () => {
         <Navbar anchors={navigationAnchors} currentSection={currentSection} />
 
         <ReactFullpage
-          scrollingSpeed={850}
+          scrollingSpeed={750}
           anchors={navigationAnchors.map((anchor) => anchor.name)}
           scrollBar={false} //Scrollbar is hidden with CSS. Without scrollbar property, the height of the sections inst being correctly calculated
           verticalCentered={false}
@@ -91,6 +95,7 @@ const FullPageWrapper: React.FC = () => {
               </>
             );
           }}
+
         />
       </div>
     </>

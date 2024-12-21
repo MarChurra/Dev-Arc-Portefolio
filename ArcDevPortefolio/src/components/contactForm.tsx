@@ -61,6 +61,7 @@ const ContactForm: React.FC = () => {
 
       setSubmitMessage("Email sent successfully!");
       setFormData({ name: "", email: "", message: "" }); // Clear the form fields
+      console.log(result)
     } catch (error) {
       console.error("Error sending email:", error);
       setSubmitMessage("An error occurred. Please try again");
