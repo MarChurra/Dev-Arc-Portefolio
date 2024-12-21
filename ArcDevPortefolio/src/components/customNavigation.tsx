@@ -86,9 +86,8 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
         {oldProjects.map((project, index) => (
           <React.Fragment key={project.id}>
             <button
-              className={`selection-button ${
-                activeProjectId === project.id ? "active" : ""
-              }`}
+              className={`selection-button ${activeProjectId === project.id ? "active" : ""
+                }`}
               onClick={() => {
                 goToSlide(project.id);
                 if (showDetails) {
@@ -98,16 +97,15 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
               aria-label={`Navigate to the project number ${index + 1}`}
             >
               <img
-                src={`${
-                  activeProjectId === project.id
+                src={`${activeProjectId === project.id
                     ? "/assets/icons/select_btn_highlight.png"
                     : "/assets/icons/select_btn.png"
-                }`}
-                className={`${
-                  activeProjectId === project.id
+                  }`}
+                className={`${activeProjectId === project.id
                     ? "selection-img-highlight"
                     : "selection-img"
-                }`}
+                  }`}
+                alt="Button to switch between projects"
               />
             </button>
 
