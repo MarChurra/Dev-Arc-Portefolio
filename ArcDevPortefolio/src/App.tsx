@@ -31,6 +31,13 @@ const FullPageWrapper: React.FC = () => {
 
   //UseEffect to handle the loading and the automatic navigation upon page refresh
   useEffect(() => {
+
+    // If the hash is empty or root, navigate to #intro by default
+    if (!window.location.hash || window.location.hash === "#") {
+      window.location.hash = "#intro";
+      setCurrentSection("intro");
+    }
+
     //If the user was not in the intro Page, maintain the page that the user is viewing upon page refresh
     const handleHashChange = () => {
       // Update the state when the hash changes
