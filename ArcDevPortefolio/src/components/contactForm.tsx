@@ -34,6 +34,28 @@ const ContactForm: React.FC = () => {
     autoExpandTextArea(e.target);
   };
 
+  const clearFormWithFadeOut = () => {
+    document.querySelectorAll(".form-input").forEach((input) => {
+      input.classList.add("fade-out");
+    });
+
+    // After the fade-out animation, clear the form
+    setTimeout(() => {
+      setFormData({ name: "", email: "", message: "" });
+
+      document.querySelectorAll(".form-input").forEach((input) => {
+        input.classList.remove("fade-out");
+        input.classList.add("fade-in");
+      });
+
+      setTimeout(() => {
+        document.querySelectorAll(".form-input").forEach((input) => {
+          input.classList.remove("fade-in");
+        });
+      }, 250); // Duration of fade-in animation
+    }, 250); // Duration of fade-out animation
+  };
+
   // Allows automatica resize of the textarea upon text input or deleting
   const autoExpandTextArea = (textarea: HTMLElement) => {
     textarea.style.height = "auto";
@@ -44,8 +66,6 @@ const ContactForm: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmittingMessage(true);
-    setSubmitMessage("");
-    setShowNotification(true);
 
     try {
       const result = await emailjs.send(
@@ -58,18 +78,16 @@ const ContactForm: React.FC = () => {
         },
         import.meta.env.VITE_EMAILJS_USER_ID
       );
-
+      clearFormWithFadeOut(); // Clear the form fields and the state
       setSubmitMessage("Email sent successfully!");
-      setFormData({ name: "", email: "", message: "" }); // Clear the form fields
-      console.log(result)
+      console.log(result);
     } catch (error) {
       console.error("Error sending email:", error);
       setSubmitMessage("An error occurred. Please try again");
-
     } finally {
       setSubmittingMessage(false);
+      setShowNotification(true);
       setTimeout(() => setShowNotification(false), 2500);
-      setTimeout(() => setSubmitMessage(""), 3500);
     }
   };
 
@@ -111,8 +129,9 @@ const ContactForm: React.FC = () => {
       ></textarea>
 
       <button
-        className={`form-button ${submittingMessage ? "active remove-border" : ""
-          }`}
+        className={`form-button ${
+          submittingMessage ? "active remove-border" : ""
+        }`}
         type="submit"
         disabled={submittingMessage}
       >
