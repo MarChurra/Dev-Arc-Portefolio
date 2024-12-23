@@ -346,7 +346,7 @@ p {
   gap: 1.5em;
   justify-items: center;
   padding-top: 1.5em;
-  margin: 0 0 3em;
+  margin: 0 0 5em;
 }
 
 .skill-container {
@@ -1063,36 +1063,37 @@ textarea {
   }
 
   .project-slider {
-    padding-top: 2.5em;
+    padding-top: 3.5em;
+    margin-left: -3px;
   }
 
   .frame {
-    width: 340px;
-    height: 295px;
+    width: 350px;
+    height: 300px;
   }
 
   .frame-container {
-    width: 294px;
-    height: 236px;
+    width: 302px;
+    height: 242.5px;
     margin-top: -0.35em;
-    margin-left: -0.2em;
+    margin-left: -0.21em;
   }
 
   .project-details-container {
-    width: 294px;
-    height: 236px;
+    width: 302px;
+    height: 242.5px;
   }
 
   .project-title {
     margin: 10px auto 0 auto;
     font-size: 1.25rem;
     width: 80%;
-    height: 30%;
+    height: 32%;
   }
 
   .details {
     margin: 0 1.5em;
-    height: 50%;
+    height: 35%;
   }
 
   .tech-icon {
@@ -1209,7 +1210,7 @@ textarea {
   /*Projects*/
 
   .project-slider {
-    padding-top: 3.5em;
+    padding-top: 4.5em;
   }
 
   .frame {
@@ -1221,9 +1222,9 @@ textarea {
 
   .frame-container {
     width: 346px;
-    height: 277px;
+    height: 278px;
     margin-top: -0.4em;
-    margin-left: -0.25em;
+    margin-left: -0.2em;
   }
 
   .project-details-container {
@@ -1480,7 +1481,7 @@ textarea {
   }
 
   .details {
-    height: 35%;
+    height: 30%;
     margin: 0 2.5em;
   }
 
