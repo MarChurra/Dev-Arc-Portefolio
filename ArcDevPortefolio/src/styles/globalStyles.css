@@ -401,7 +401,7 @@ p {
   position: relative;
   margin: 0 auto;
   width: 300px;
-  height: 265px;
+  height: 240px;
   background-image: url("/assets/icons/frame_sml.png");
   background-size: cover;
   background-position: center;
@@ -414,10 +414,10 @@ p {
 }
 
 .frame-container {
-  width: 260px;
-  height: 209px;
+  width: 258px;
+  height: 185px;
   margin-top: -0.275em;
-  margin-left: -0.2em;
+  margin-left: -0.15em;
   z-index: 10;
   position: relative;
   pointer-events: none;
@@ -434,8 +434,8 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  width: 261px;
-  height: 208px;
+  width: 258px;
+  height: 185px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -456,8 +456,8 @@ p {
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  width: 75%;
-  height: 27.5%;
+  width: 85%;
+  height: 30%;
   text-wrap: wrap;
 }
 
@@ -491,6 +491,7 @@ p {
   position: relative;
   display: inline-block;
   cursor: pointer;
+  font-size: 1.1rem;
 }
 
 .project-link::after {
@@ -522,13 +523,13 @@ p {
 .selection-button,
 .custom-arrow-img,
 .selection-img {
-  width: 25px;
+  width: 30px;
   outline: black;
 }
 
 .selection-img-highlight,
 .selection-button.active {
-  width: 30px;
+  width: 34px;
 }
 
 .selection-container {
@@ -597,7 +598,6 @@ p {
   align-items: center;
   min-width: 70%;
   max-width: 70%;
-  transition: all 0.1s ease;
 }
 
 .form-input,
@@ -606,7 +606,6 @@ p {
   min-width: 100%;
   max-width: 100%;
   font-size: 1rem;
-  transition: all 0.1s ease, opacity 0.3s ease;
 }
 
 .form-input,
@@ -619,7 +618,6 @@ textarea {
   appearance: none;
   border: none;
   color: #bbc6cc;
-  transition: all 0.1s ease;
 }
 
 .form-button {
@@ -937,6 +935,7 @@ textarea {
 }
 
 @media only screen and (min-width: 350px) {
+
   /*Text Styling */
   h1 {
     font-size: 2.5rem;
@@ -1063,25 +1062,25 @@ textarea {
   }
 
   .project-slider {
-    padding-top: 3.5em;
+    padding-top: 4em;
     margin-left: -3px;
   }
 
   .frame {
-    width: 350px;
-    height: 300px;
+    width: 335px;
+    height: 270px;
   }
 
   .frame-container {
-    width: 302px;
-    height: 242.5px;
-    margin-top: -0.35em;
-    margin-left: -0.21em;
+    width: 290px;
+    height: 208px;
+    margin-top: -0.3em;
+    margin-left: -0.15em;
   }
 
   .project-details-container {
-    width: 302px;
-    height: 242.5px;
+    width: 290px;
+    height: 208px;
   }
 
   .project-title {
@@ -1215,21 +1214,21 @@ textarea {
 
   .frame {
     background-image: url("/assets/icons/frame_sml.png");
-    width: 400px;
-    height: 345px;
-    margin-bottom: 0.5em;
+    width: 380px;
+    height: 300px;
+    margin-bottom: 1em;
   }
 
   .frame-container {
-    width: 346px;
-    height: 278px;
+    width: 325px;
+    height: 232px;
     margin-top: -0.4em;
     margin-left: -0.2em;
   }
 
   .project-details-container {
-    width: 346px;
-    height: 277px;
+    width: 326px;
+    height: 232px;
   }
 
   .project-title {
@@ -1261,12 +1260,12 @@ textarea {
   .selection-button,
   .custom-arrow-img,
   .selection-img {
-    width: 40px;
+    width: 45px;
   }
 
   .selection-img-highlight,
   .selection-button.active {
-    width: 50px;
+    width: 55px;
   }
 
   /*Contacts*/
@@ -1451,27 +1450,27 @@ textarea {
 
   .project-slider {
     padding-top: 0;
-    padding-bottom: 6em;
+    padding-bottom: 4.5em;
     padding-left: 3em;
   }
 
   .frame {
     background-image: url("/assets/icons/frame_sml.png");
-    width: 625px;
-    height: 535px;
+    width: 600px;
+    height: 485px;
     margin-bottom: 2.25em;
   }
 
   .frame-container {
-    width: 539px;
-    height: 433px;
-    margin-left: -6px;
+    width: 521px;
+    height: 375px;
+    margin-left: -4px;
     margin-top: -10px;
   }
 
   .project-details-container {
-    width: 539px;
-    height: 433px;
+    width: 521px;
+    height: 375px;
   }
 
   .project-title {
@@ -1486,11 +1485,11 @@ textarea {
   }
 
   .project-tech {
-    gap: 1.75em;
+    gap: 2em;
   }
 
   .tech-icon {
-    width: 40px;
+    width: 45px;
   }
 
   .project-links-container {
@@ -1498,7 +1497,7 @@ textarea {
   }
 
   .project-link {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
   .projects-navigation {
@@ -1808,7 +1807,7 @@ textarea {
   }
 
   .project-details-container {
-    width: 630px;
+    width: 633px;
     height: 388px;
   }
 
@@ -1967,6 +1966,66 @@ textarea {
   }
 }
 
+@media only screen and (min-width: 1500px) {
+
+  .frame {
+    width: 850px;
+    height: 570px;
+  }
+
+  .frame-container {
+    width: 728px;
+    height: 450px;
+    margin-left: -0.5em;
+    opacity: 80%;
+    pointer-events: auto;
+  }
+
+  .project-details-container {
+    width: 728px;
+    height: 450px;
+  }
+
+  .project-title {
+    font-size: 2.5rem;
+    width: 85%;
+  }
+
+  .details {
+    height: 45%;
+  }
+
+  .project-tech {
+    gap: 2.75em;
+  }
+
+  .project-link {
+    font-size: 2.25rem;
+  }
+
+  .tech-icon {
+    width: 55px;
+  }
+
+  .selection-container {
+    gap: 30px;
+    margin: 1em 3em;
+  }
+
+  .custom-arrow {
+    width: 70px;
+  }
+
+  .custom-arrow-highlighted {
+    width: 70px;
+  }
+
+  .selection-button,
+  .custom-arrow-img {
+    width: 75px;
+  }
+}
+
 @media only screen and (min-width: 1750px) {
   .project-slider {
     margin-top: 5em;
@@ -2114,7 +2173,7 @@ textarea {
   /*Projects*/
 
   .project-slider {
-    margin: 1em;
+    margin: 2.5em;
   }
 
   .projects-container {
@@ -2134,12 +2193,12 @@ textarea {
   .frame-container {
     width: 1077px;
     height: 662px;
-    margin-left: -0.8em;
+    margin-left: -0.65em;
     margin-top: -1em;
   }
 
   .project-details-container {
-    width: 1077px;
+    width: 1078px;
     height: 662px;
   }
 
@@ -2259,6 +2318,7 @@ textarea {
 /*Animations*/
 
 @keyframes bounce {
+
   0%,
   100% {
     transform: translateY(0);
@@ -2284,6 +2344,7 @@ textarea {
     opacity: 1;
     transform: translateX(0px);
   }
+
   to {
     opacity: 0;
     transform: translateX(20px);
@@ -2295,6 +2356,7 @@ textarea {
     opacity: 0;
     transform: translateX(20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0px);
