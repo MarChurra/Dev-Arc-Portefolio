@@ -1062,8 +1062,8 @@ textarea {
   }
 
   .project-slider {
-    padding-top: 4em;
-    margin-left: -3px;
+    padding-top: 5em;
+    margin-left: -2px;
   }
 
   .frame {
@@ -1092,7 +1092,7 @@ textarea {
 
   .details {
     margin: 0 1.5em;
-    height: 35%;
+    height: 40%;
   }
 
   .tech-icon {
@@ -1209,7 +1209,7 @@ textarea {
   /*Projects*/
 
   .project-slider {
-    padding-top: 4.5em;
+    padding-top: 5em;
   }
 
   .frame {
@@ -1450,8 +1450,8 @@ textarea {
 
   .project-slider {
     padding-top: 0;
-    padding-bottom: 4.5em;
-    padding-left: 3em;
+    padding-bottom: 4em;
+    padding-left: 2em;
   }
 
   .frame {
@@ -1501,7 +1501,7 @@ textarea {
   }
 
   .projects-navigation {
-    width: 90%;
+    width: 92.5%;
   }
 
   .selection-container {
@@ -1851,7 +1851,7 @@ textarea {
   }
 
   .projects-navigation {
-    width: 90%;
+    width: 95%;
     padding: 1em;
     padding-left: 1.5em;
     padding-bottom: 0;
@@ -2173,7 +2173,7 @@ textarea {
   /*Projects*/
 
   .project-slider {
-    margin: 2.5em;
+    margin: 1em;
   }
 
   .projects-container {
@@ -2187,7 +2187,7 @@ textarea {
   .frame {
     width: 1250px;
     height: 855px;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
   }
 
   .frame-container {
@@ -2227,7 +2227,7 @@ textarea {
 
   .selection-container {
     gap: 25px;
-    margin: 0 3em;
+    margin: 0 4em;
     width: 100%;
   }
 
