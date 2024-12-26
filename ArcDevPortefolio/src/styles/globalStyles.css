@@ -456,7 +456,7 @@ p {
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  width: 85%;
+  width: 95%;
   height: 30%;
   text-wrap: wrap;
 }
@@ -466,7 +466,7 @@ p {
   justify-content: space-between;
   align-items: center;
   margin: 0 1.5em;
-  height: 52.5%;
+  height: 55%;
 }
 
 .project-tech {
@@ -488,6 +488,7 @@ p {
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-decoration: none;
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -591,7 +592,7 @@ p {
 }
 
 .contact-form {
-  margin: 1em auto 1.5em;
+  margin: 2em auto 2.5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -667,7 +668,7 @@ input:autofill:focus {
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-bottom: 3px solid#FFF2B2;
+  border-bottom: 1.5px solid#FFF2B2;
 }
 
 .form-button:hover,
@@ -677,7 +678,7 @@ input:autofill:focus {
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-bottom: 3px solid#FFF2B2;
+  border-bottom: 1.5px solid#FFF2B2;
   transition: 0.2s ease;
 }
 
@@ -1086,17 +1087,17 @@ textarea {
   .project-title {
     margin: 10px auto 0 auto;
     font-size: 1.25rem;
-    width: 80%;
+    width: 90%;
     height: 32%;
   }
 
   .details {
     margin: 0 1.5em;
-    height: 40%;
+    height: 45%;
   }
 
   .tech-icon {
-    width: 27.5px;
+    width: 25px;
   }
 
   .project-link {
@@ -1556,12 +1557,12 @@ textarea {
   textarea:focus,
   input:-webkit-autofill:focus,
   input:autofill:focus {
-    border-bottom: 3px solid#FFF2B2;
+    border-bottom: 1.5px solid#FFF2B2;
   }
 
   .form-button:focus,
   .form-button.active {
-    border-bottom: 3px solid#FFF2B2;
+    border-bottom: 1.5px solid#FFF2B2;
   }
 
   .form-button {
