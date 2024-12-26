@@ -2141,6 +2141,27 @@ textarea {
 }
 
 @media only screen and (min-width: 1750px) {
+
+  .author-photo {
+    height: 450px;
+  }
+
+  .social-navbar {
+    margin: 3.5em 0 2em;
+  }
+
+  .social-icon,
+  .social-link {
+    width: 45px;
+  }
+
+  .social-icon::before,
+  .social-link::before {
+    width: 80px;
+    transform: translate(-21%, -74%);
+    height: 160px;
+  }
+
   .project-slider {
     margin-top: 1.5em;
   }
