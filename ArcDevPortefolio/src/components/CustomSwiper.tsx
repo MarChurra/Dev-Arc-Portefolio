@@ -93,7 +93,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
                 <img
                   className="project-image"
                   src={
-                    isDesktop || activeProjectId === project.id
+                    isDesktop && activeProjectId === project.id
                       ? project.thumbnailFrame
                       : project.thumbnail
                   }
