@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Project } from "../mappedInfo/pastProjects";
 import { TechnologiesMap } from "../mappedInfo/technologiesMap";
 import useIsDesktop from "../hooks/currentViewport";
@@ -36,19 +35,6 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
   //Toggles the show Details when user hovers the container in a desktop or higher viewport
   const isDesktop = useIsDesktop();
 
-  //Preloads the active Slide source in larger viewports, to avoid rendering delays
-  useEffect(() => {
-    if (isDesktop) {
-      const activeSlide = pastProjects.find(
-        (project) => project.id === activeProjectId
-      );
-
-      if (activeSlide) {
-        const activeSlideThumbnail = new Image();
-        activeSlideThumbnail.src = activeSlide.thumbnailFrame;
-      }
-    }
-  }, [isDesktop, activeProjectId, pastProjects]);
   return (
     <>
       <div className="frame">
@@ -107,9 +93,9 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
                 <img
                   className="project-image"
                   src={
-                    !isDesktop || activeProjectId !== project.id
-                      ? project.thumbnail
-                      : project.thumbnailFrame
+                    isDesktop || activeProjectId === project.id
+                      ? project.thumbnailFrame
+                      : project.thumbnail
                   }
                   alt={`${project.title} thumbnail`}
                   onClick={!isDesktop ? toggleDetails : undefined}
