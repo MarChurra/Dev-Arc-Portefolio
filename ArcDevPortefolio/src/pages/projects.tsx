@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
-import { oldProjects } from "../mappedInfo/pastProjects";
+import { pastProjects } from "../mappedInfo/pastProjects";
 import CustomSwiper from "../components/CustomSwiper";
 import CustomNavigation from "../components/customNavigation";
 import { Swiper as SwiperCore } from "swiper";
@@ -11,19 +11,19 @@ interface ProjectProps {
 const Projects: React.FC<ProjectProps> = () => {
   //States to keep track of the current project being seen
   const [activeProjectId, setActiveProjectId] = useState<string>(
-    oldProjects[0].id
+    pastProjects[0].id
   );
   const [swiperInstance, setSwiperInstance] = useState<SwiperCore | null>(null);
 
   // Handle slide change to update the active index
   const handleSlideChange = (swiper: SwiperCore) => {
     const realIndex = swiper.realIndex;
-    setActiveProjectId(oldProjects[realIndex].id);
+    setActiveProjectId(pastProjects[realIndex].id);
   };
 
   // Navigate to selected slide
   const goToSlide = (id: string) => {
-    const index = oldProjects.findIndex((project) => project.id === id);
+    const index = pastProjects.findIndex((project) => project.id === id);
     if (swiperInstance) {
       swiperInstance.slideToLoop(index);
     }
@@ -65,7 +65,8 @@ const Projects: React.FC<ProjectProps> = () => {
             handleSlideChange={handleSlideChange}
             setSwiperInstance={setSwiperInstance}
             setShowDetails={setShowDetails}
-            activeProjectId = {activeProjectId}
+            activeProjectId={activeProjectId}
+            pastProjects={pastProjects}
           />
           <CustomNavigation
             swiperInstance={swiperInstance}

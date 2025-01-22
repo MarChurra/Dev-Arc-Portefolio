@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-interface Project {
+export interface Project {
   id: string;
   title: string;
   thumbnail: string;
@@ -10,7 +10,7 @@ interface Project {
   github: string;
 }
 
-export const oldProjects: Project[] = [
+export const pastProjects: Project[] = [
   {
     id: uuidv4(),
     title: "Tagus Portus Modeling",

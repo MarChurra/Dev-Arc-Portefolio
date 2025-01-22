@@ -1,4 +1,5 @@
-import { oldProjects } from "../mappedInfo/pastProjects";
+import { useEffect } from "react";
+import { Project } from "../mappedInfo/pastProjects";
 import { TechnologiesMap } from "../mappedInfo/technologiesMap";
 import useIsDesktop from "../hooks/currentViewport";
 
@@ -20,6 +21,7 @@ interface CustomSwiperProps {
   setSwiperInstance: (swiper: SwiperCore) => void;
   setShowDetails: (value: boolean) => void;
   activeProjectId: string;
+  pastProjects: Project[];
 }
 
 const CustomSwiper: React.FC<CustomSwiperProps> = ({
@@ -29,10 +31,24 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
   setSwiperInstance,
   setShowDetails,
   activeProjectId,
+  pastProjects
 }) => {
   //Toggles the show Details when user hovers the container in a desktop or higher viewport
   const isDesktop = useIsDesktop();
 
+  //Preloads the active Slide source in larger viewports, to avoid rendering delays
+  useEffect(() => {
+    if (isDesktop) {
+      const activeSlide = pastProjects.find(
+        (project) => project.id === activeProjectId
+      );
+
+      if (activeSlide) {
+        const activeSlideThumbnail = new Image();
+        activeSlideThumbnail.src = activeSlide.thumbnailFrame;
+      }
+    }
+  }, [isDesktop, activeProjectId, pastProjects]);
   return (
     <>
       <div className="frame">
@@ -55,12 +71,12 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
             coverflowEffect={
               isDesktop
                 ? {
-                    rotate: 0,
-                    stretch: 0,
-                    depth: 200,
-                    modifier: 1,
-                    slideShadows: false,
-                  }
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 200,
+                  modifier: 1,
+                  slideShadows: false,
+                }
                 : undefined
             }
             speed={500}
@@ -69,7 +85,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
             className="mySwiper"
             onSwiper={setSwiperInstance}
           >
-            {oldProjects.map((project) => (
+            {pastProjects.map((project) => (
               <SwiperSlide
                 key={project.id}
                 onMouseEnter={
@@ -79,7 +95,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
                 }
                 onMouseOver={
                   isDesktop && activeProjectId === project.id
-                  ? () => setShowDetails(true)
+                    ? () => setShowDetails(true)
                     : undefined
                 }
                 onMouseLeave={
@@ -99,11 +115,10 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
                   onClick={!isDesktop ? toggleDetails : undefined}
                 />
                 <div
-                  className={`project-details-container ${
-                    showDetails && activeProjectId === project.id
-                      ? "visible"
-                      : ""
-                  }`}
+                  className={`project-details-container ${showDetails && activeProjectId === project.id
+                    ? "visible"
+                    : ""
+                    }`}
                   onClick={(event) => {
                     event.stopPropagation();
                     if (!isDesktop) toggleDetails();

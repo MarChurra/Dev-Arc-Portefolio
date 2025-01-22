@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useRef } from "react";
-import { oldProjects } from "../mappedInfo/pastProjects";
+import { pastProjects } from "../mappedInfo/pastProjects";
 
 interface CustomNavigationProps {
   swiperInstance: any | null;
@@ -83,7 +83,7 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
       </button>
 
       <div className="selection-container" ref={selectionContainerRef}>
-        {oldProjects.map((project, index) => (
+        {pastProjects.map((project, index) => (
           <React.Fragment key={project.id}>
             <button
               className={`selection-button ${
@@ -112,7 +112,7 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
               />
             </button>
 
-            {index < oldProjects.length - 1 && (
+            {index < pastProjects.length - 1 && (
               <img
                 src="/assets/icons/selector_circle.png"
                 alt="Decorative image separating project selectors"
