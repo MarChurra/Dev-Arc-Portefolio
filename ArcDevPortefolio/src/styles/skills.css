@@ -1,0 +1,152 @@
+.skill-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+  justify-items: center;
+  padding-top: 1.5em;
+  margin: 0 0 5em;
+}
+
+.skill-container {
+  border-bottom: 1px solid #bbc6cc;
+  transition: all 0.1s ease;
+}
+
+.skill-title {
+  background: var(--highlighted-text);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.skill-experience {
+  background: var(--silver-text);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0.5em;
+  padding-bottom: 1.5em;
+}
+
+@media only screen and (min-width: 250px) and (max-width: 350px) {
+  .skill-grid {
+    padding-top: 0.75em;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 400px) {
+  .skill-grid {
+    padding-top: 1em;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 500px) {
+  .skill-grid {
+    padding-top: 1em;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 350px) {
+  .skill-grid {
+    gap: 2.5em;
+    margin: 0 0 5em;
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  .skill-title {
+    font-size: 2rem;
+  }
+
+  .skill-experience {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.5em;
+    column-gap: 2em;
+    justify-items: center;
+    width: 90%;
+    padding-top: 2em;
+    margin: 0 auto;
+    margin-bottom: 5em;
+  }
+
+  .skill-container {
+    border-bottom: 2px solid #bbc6cc;
+  }
+
+  .skill-title {
+    font-size: 2.25rem;
+  }
+
+  .skill-experience {
+    font-size: 1.4;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .skill-grid {
+    gap: 4em;
+    width: 80%;
+    padding: 1em 0 1em 1em;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .skill-container {
+    padding: 0.5em 2em 0;
+  }
+
+  .skill-container:hover {
+    background-color: rgb(57, 57, 57);
+    border-radius: 10px;
+    border-bottom: 2px solid#e2c78f;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(226, 199, 143, 1);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(226, 199, 143, 1);
+    box-shadow: 1px 1px 5px 0px rgba(226, 199, 143, 1);
+    transition: all 0.1s ease;
+  }
+
+  .skill-title {
+    font-size: 2.25rem;
+  }
+
+  .skill-experience {
+    padding-bottom: 1em;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .skill-grid {
+    margin-top: 2.5em;
+    width: 60%;
+    padding: 0;
+    gap: 5em;
+  }
+
+  .skill-container {
+    padding: 1em 2em 1em;
+  }
+
+  .skill-title {
+    font-size: 3.25rem;
+    padding-bottom: 0.25em;
+  }
+
+  .skill-experience {
+    font-size: 1.75rem;
+  }
+}

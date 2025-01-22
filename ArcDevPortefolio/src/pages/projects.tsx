@@ -65,6 +65,7 @@ const Projects: React.FC<ProjectProps> = () => {
             handleSlideChange={handleSlideChange}
             setSwiperInstance={setSwiperInstance}
             setShowDetails={setShowDetails}
+            activeProjectId = {activeProjectId}
           />
           <CustomNavigation
             swiperInstance={swiperInstance}

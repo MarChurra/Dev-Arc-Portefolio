@@ -60,7 +60,7 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
   return (
     <div className="projects-navigation">
       <button
-        className="custom-arrow"
+        className="custom-arrow arrow-left"
         onClick={() => {
           swiperInstance?.slidePrev();
           if (showDetails) {
@@ -86,8 +86,9 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
         {oldProjects.map((project, index) => (
           <React.Fragment key={project.id}>
             <button
-              className={`selection-button ${activeProjectId === project.id ? "active" : ""
-                }`}
+              className={`selection-button ${
+                activeProjectId === project.id ? "active" : ""
+              }`}
               onClick={() => {
                 goToSlide(project.id);
                 if (showDetails) {
@@ -97,14 +98,16 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
               aria-label={`Navigate to the project number ${index + 1}`}
             >
               <img
-                src={`${activeProjectId === project.id
+                src={`${
+                  activeProjectId === project.id
                     ? "/assets/icons/select_btn_highlight.png"
                     : "/assets/icons/select_btn.png"
-                  }`}
-                className={`${activeProjectId === project.id
+                }`}
+                className={`${
+                  activeProjectId === project.id
                     ? "selection-img-highlight"
                     : "selection-img"
-                  }`}
+                }`}
                 alt="Button to switch between projects"
               />
             </button>
@@ -131,7 +134,7 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
         aria-label="Navigate to the next project"
       >
         <img
-          className="custom-arrow-img"
+          className="custom-arrow-img arrow-right"
           src="/assets/icons/arrow_right.png"
           onMouseOver={(e) =>
             (e.currentTarget.src = "/assets/icons/arrow_highlight_right.png")
