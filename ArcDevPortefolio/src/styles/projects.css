@@ -45,6 +45,7 @@
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   background-color: rgba(48, 52, 54, 0.9);
+  z-index: 10;
 }
 
 .project-details-container.visible {
@@ -639,6 +640,10 @@
     left: 0;
   }
 
+  .swiper-slide-prev {
+    left: 30%;
+  }
+
   .project-image,
   .swiper-slide-active {
     width: 1100px;
@@ -653,10 +658,10 @@
   }
 
   .project-details-container {
-    width: 947px;
+    width: 945px;
     height: 500px;
     top: 9%;
-    left: 6%;
+    left: 7.1%;
   }
 
   .project-title {

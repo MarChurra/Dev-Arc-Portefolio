@@ -17,7 +17,7 @@
 
 html,
 body {
-  overflow-y: auto;
+  overflow-y: hidden;
   scrollbar-width: none;
 }
 
@@ -57,6 +57,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+overflow-y: hidden;
 }
 
 #contactSection {
