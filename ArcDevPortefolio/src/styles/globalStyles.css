@@ -38,11 +38,6 @@ body {
   width: 95% !important;
   margin: 0 auto !important;
   height: 100% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-direction: column;
-  overflow-y: auto;
 }
 
 #introSection {
@@ -63,10 +58,6 @@ body {
 
 #contactSection {
   background: linear-gradient(#303436, #303436);
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: start !important;
-  justify-content: center !important;
 }
 
 /* Main Content of the App */
