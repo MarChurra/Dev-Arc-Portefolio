@@ -149,7 +149,11 @@ p {
 
 @media only screen and (max-width: 750px) {
   #contactSection {
-    height: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 }
 
