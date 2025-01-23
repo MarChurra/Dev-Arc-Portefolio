@@ -254,7 +254,7 @@ textarea {
 
 @media (max-width: 750px) {
   .contacts-section {
-    height: 100vh;
+    height: 100%;
     overflow-y: auto;
   }
 }

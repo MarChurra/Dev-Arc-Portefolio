@@ -62,6 +62,10 @@ body {
 
 #contactSection {
   background: linear-gradient(#303436, #303436);
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: start !important;
 }
 
 /* Main Content of the App */
