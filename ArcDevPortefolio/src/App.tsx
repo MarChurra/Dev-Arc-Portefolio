@@ -1,4 +1,4 @@
-// @ts-nocheck 
+// @ts-nocheck
 //TS no check was added after the app was fully built. Errors with the props of the fullpage api stopped the production code,
 // but did not affect the performance of the app
 
@@ -31,7 +31,6 @@ const FullPageWrapper: React.FC = () => {
 
   //UseEffect to handle the loading and the automatic navigation upon page refresh
   useEffect(() => {
-
     // If the hash is empty or root, navigate to #intro by default
     if (!window.location.hash || window.location.hash === "#") {
       window.location.hash = "#intro";
@@ -49,7 +48,9 @@ const FullPageWrapper: React.FC = () => {
     // Attach the event listener for the window load event
     if (document.readyState === "complete") {
       // If the page is already loaded
-      handlePageLoad();
+      setTimeout(() => {
+        handlePageLoad();
+      }, 0.5);
     } else {
       window.addEventListener("load", handlePageLoad);
     }
@@ -102,7 +103,6 @@ const FullPageWrapper: React.FC = () => {
               </>
             );
           }}
-
         />
       </div>
     </>

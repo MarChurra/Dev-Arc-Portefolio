@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Project } from "../mappedInfo/pastProjects";
 import { TechnologiesMap } from "../mappedInfo/technologiesMap";
 import useIsDesktop from "../hooks/currentViewport";
@@ -30,10 +31,19 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
   setSwiperInstance,
   setShowDetails,
   activeProjectId,
-  pastProjects
+  pastProjects,
 }) => {
   //Toggles the show Details when user hovers the container in a desktop or higher viewport
   const isDesktop = useIsDesktop();
+
+  useEffect(() => {
+    if (isDesktop) {
+      pastProjects.forEach((project) => {
+        const img = new Image();
+        img.src = project.thumbnailFrame;
+      });
+    }
+  }, [isDesktop, pastProjects]);
 
   return (
     <>
@@ -57,12 +67,12 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
             coverflowEffect={
               isDesktop
                 ? {
-                  rotate: 0,
-                  stretch: 0,
-                  depth: 200,
-                  modifier: 1,
-                  slideShadows: false,
-                }
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows: false,
+                  }
                 : undefined
             }
             speed={500}
@@ -101,10 +111,11 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
                   onClick={!isDesktop ? toggleDetails : undefined}
                 />
                 <div
-                  className={`project-details-container ${showDetails && activeProjectId === project.id
-                    ? "visible"
-                    : ""
-                    }`}
+                  className={`project-details-container ${
+                    showDetails && activeProjectId === project.id
+                      ? "visible"
+                      : ""
+                  }`}
                   onClick={(event) => {
                     event.stopPropagation();
                     if (!isDesktop) toggleDetails();
