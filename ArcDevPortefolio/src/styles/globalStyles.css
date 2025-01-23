@@ -148,9 +148,8 @@ p {
 /*Adjust Navbar on mobile viewport*/
 
 @media only screen and (max-width: 750px) {
-  .contact-container {
-    height: 110vh;
-    margin-bottom: 5%;
+  #contactSection {
+    height: 100%;
   }
 }
 
