@@ -147,6 +147,12 @@ p {
 
 /*Adjust Navbar on mobile viewport*/
 
+@media only screen and (max-width: 750px) {
+  .contact-container {
+    height: 110vh;
+  }
+}
+
 @media only screen and (min-width: 350px) {
   /*Text Styling */
   h1 {
