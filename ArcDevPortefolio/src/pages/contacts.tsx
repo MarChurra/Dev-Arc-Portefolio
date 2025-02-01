@@ -13,19 +13,19 @@ const Contacts: React.FC = () => {
         </p>
 
         <ContactForm />
+
+        <div className="footer-wrapper">
+          <footer className="project-footer">
+            <SocialNav />
+            <img
+              className="footer-logo"
+              src="/assets/icons/logo.png"
+              alt="Author´s Logo"
+            />
+          </footer>
+        </div>
         
       </section>
-
-      <div className="footer-wrapper">
-        <footer className="project-footer">
-          <SocialNav />
-          <img
-            className="footer-logo"
-            src="/assets/icons/logo.png"
-            alt="Author´s Logo"
-          />
-        </footer>
-      </div>
     </>
   );
 };

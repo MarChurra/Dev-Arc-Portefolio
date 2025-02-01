@@ -4,7 +4,7 @@
 }
 
 .project-footer {
-  width: 85%;
+  width: 90%;
   margin-bottom: 0.5em;
   padding-top: 0.4em;
   padding-bottom: 0.5em;
@@ -72,13 +72,6 @@
     margin-top: auto;
   }
 
-  .project-footer.social-icon::before,
-  .project-footer .social-link::before {
-    width: 75px;
-    height: 70px;
-    transform: translate(-24%, -55%);
-  }
-
   .project-footer .social-navbar {
     gap: 2em;
   }
@@ -87,13 +80,6 @@
 @media only screen and (min-width: 2000px) {
   .project-footer {
     padding: 1.5em 0;
-  }
-
-  .project-footer.social-icon::before,
-  .project-footer .social-link::before {
-    width: 100px;
-    height: 100px;
-    transform: translate(-21.5%, -64%);
   }
 
   .project-footer .social-navbar {
