@@ -32,6 +32,12 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [swiperInstance]);
 
+  //preload the active arrow icon
+  useEffect(() => {
+    const activeArrow = new Image();
+    activeArrow.src = "/assets/icons/arrow_highlight_right.png";
+  }, []);
+
   //Add movement to the container of the buttons, that centers the active button, if any of them can´t be rendered
   const selectionContainerRef = useRef<HTMLDivElement>(null);
 

@@ -39,8 +39,10 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
   useEffect(() => {
     if (isDesktop) {
       pastProjects.forEach((project) => {
-        const img = new Image();
-        img.src = project.thumbnailFrame;
+        const regularThumbnail = new Image();
+        regularThumbnail.src = project.thumbnail;
+        const activeThumbnail = new Image();
+        activeThumbnail.src = project.thumbnailFrame;
       });
     }
   }, [isDesktop, pastProjects]);
