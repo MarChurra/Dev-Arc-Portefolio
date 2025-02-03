@@ -1,3 +1,10 @@
+.zaask-widget {
+  position: fixed;
+  bottom: 15px;
+  width: 125px;
+  left: 15px;
+}
+
 .app-logo,
 .footer-logo {
   width: 35px;

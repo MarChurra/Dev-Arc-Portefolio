@@ -1,6 +1,9 @@
 import SocialNav from "../components/social-nav";
+import useIsDesktop from "../hooks/currentViewport";
 
 const Intro: React.FC = () => {
+  const isDesktop = useIsDesktop();
+
   return (
     <>
       <img
@@ -36,6 +39,15 @@ const Intro: React.FC = () => {
         >
           <span className="btn-text">Contact Me</span>
         </button>
+        <a target="_blank" href="https://www.zaask.pt/user/mchurradev">
+          {isDesktop ? (
+            <img
+              className="zaask-widget"
+              src="https://www.zaask.pt/widget?user=924026&widget=pro-findme"
+              alt=""
+            />
+          ) : null}
+        </a>
       </div>
     </>
   );
