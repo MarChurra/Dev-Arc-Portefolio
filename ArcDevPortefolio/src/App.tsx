@@ -50,7 +50,7 @@ const FullPageWrapper: React.FC = () => {
       // If the page is already loaded
       setTimeout(() => {
         handlePageLoad();
-      }, 0.5);
+      }, 500);
     } else {
       window.addEventListener("load", handlePageLoad);
     }
