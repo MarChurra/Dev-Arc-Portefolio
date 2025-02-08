@@ -6,6 +6,9 @@ import React, { useState, useEffect } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 
 import navigationAnchors from "./mappedInfo/navigationAnchors";
+import disableZoomScroll from "./hooks/disableZoomScroll";
+import handlePageLoad from "./hooks/handlePageLoad";
+import useIsDesktop from "./hooks/currentViewport";
 
 import Loading from "./pages/loading";
 import Intro from "./pages/intro";
@@ -16,14 +19,6 @@ import Navbar from "./components/navbar";
 import DownArrow from "./components/downArrow";
 
 const FullPageWrapper: React.FC = () => {
-  // Track loading state
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-
-  // Add event listener for the load event
-  const handlePageLoad = () => {
-    setIsLoading(false); // Finish loading as soon as app content has fully loaded
-  };
-
   //Track current section being seen by the user
   const [currentSection, setCurrentSection] = useState<string>(
     window.location.hash ? window.location.hash.slice(1) : "intro"
@@ -43,24 +38,22 @@ const FullPageWrapper: React.FC = () => {
       setCurrentSection(window.location.hash.slice(1));
     };
 
-    window.addEventListener("hashchange", handleHashChange);
-
-    // Attach the event listener for the window load event
-    if (document.readyState === "complete") {
-      // If the page is already loaded
-      setTimeout(() => {
-        handlePageLoad();
-      }, 500);
-    } else {
-      window.addEventListener("load", handlePageLoad);
-    }
-
     return () => {
       // Cleanup listener on unmount
-      window.removeEventListener("load", handlePageLoad);
       window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
+
+  //Track if the user is on a desktop or higher viewport
+  const isDesktop = useIsDesktop();
+
+  // Track loading state
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    disableZoomScroll(); //Disable zoom on desktop
+    handlePageLoad(setIsLoading); //Handle the loading of the page
+  }, [isDesktop]);
 
   return (
     <>

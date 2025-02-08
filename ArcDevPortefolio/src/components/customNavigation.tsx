@@ -34,8 +34,10 @@ const CustomNavigation: React.FC<CustomNavigationProps> = ({
 
   //preload the active arrow icon
   useEffect(() => {
-    const activeArrow = new Image();
-    activeArrow.src = "/assets/icons/arrow_highlight_right.png";
+    const activeArrowLeft = new Image();
+    const activeArrowRight = new Image();
+    activeArrowRight.src = "/assets/icons/arrow_highlight_right.png";
+    activeArrowLeft.src = "/assets/icons/arrow_highlight_left.png";
   }, []);
 
   //Add movement to the container of the buttons, that centers the active button, if any of them can´t be rendered

@@ -36,6 +36,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
   //Toggles the show Details when user hovers the container in a desktop or higher viewport
   const isDesktop = useIsDesktop();
 
+  //Preloads the thumbnails
   useEffect(() => {
     if (isDesktop) {
       pastProjects.forEach((project) => {
@@ -45,7 +46,7 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
         activeThumbnail.src = project.thumbnailFrame;
       });
     }
-  }, [isDesktop, pastProjects]);
+  },[]);
 
   return (
     <>

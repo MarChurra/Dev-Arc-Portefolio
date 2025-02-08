@@ -17,7 +17,7 @@
 
 html,
 body {
-  overflow-y: hidden;
+  overflow-x: hidden;
   scrollbar-width: none;
 }
 
@@ -32,11 +32,12 @@ body {
   width: 95% !important;
   margin: 0 auto !important;
   height: 100% !important;
-  overflow-x: hidden;
+  border: none;
 }
 
 #introSection {
   background: linear-gradient(-180deg, #737570 0%, #303436 100%);
+overflow-y: auto;
 }
 
 #skillsSection {
@@ -48,7 +49,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow-y: hidden;
 }
 
 #contactSection {
